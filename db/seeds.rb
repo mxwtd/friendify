@@ -5,3 +5,41 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require 'faker'
+
+# Create users
+puts "create users"
+10.times do
+  name = Faker::Name.first_name
+  User.create( 
+    name: name,
+    password: Faker::Alphanumeric.alpha(number: 10),
+    email: name+'@friend.com',
+  )
+end
+
+puts "create friends"
+User.all.find_each do |user|
+  User.all.map { user.friends << Friend.create!(description: Faker::Lorem.paragraph, location: Faker::Address.city, price: Faker::Number.decimal_part(digits: 2), user_id: user.id) }
+end
+
+puts "set some friends to true"
+Friend.all.find_each do |friend|
+  friend.update!(is_friend: [true, false].sample)
+end
+
+puts "Create Bookings"
+User.all.find_each do |user|
+  2.times do |i|
+    new_book = Booking.create!(
+      user_id: user.id, 
+      friend_id: user.friends[i].id, 
+      comment: Faker::Lorem.paragraph,  
+    )
+    user.bookings << new_book
+    Friend.find(user.friends[i].id).bookings << new_book
+  end
+end
+
+puts "seeds finish"
