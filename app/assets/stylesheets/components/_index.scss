@@ -3,3 +3,54 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+html {
+    font-size: 16px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  }
+.container {
+margin-top: 2rem;
+margin-bottom: 2rem;
+height: 15rem;
+}
+.banner {
+background-size: cover;
+background-position: center;
+padding: 150px 0;
+}
+.banner h1 {
+margin: 0;
+color: white;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+font-size: 32px;
+font-weight: bold;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+.banner p {
+font-size: 20px;
+color: white;
+opacity: .7;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+.join-btn {
+background-color: #EA443A;
+color: white;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+font-size: 16px;
+font-weight: bold;
+margin-top: 20px;
+text-decoration: none;
+}
+.join-btn:hover {
+background-color: #C62E33 !important;
+color: white !important;
+border: none !important;
+border-radius: 5px !important;
+padding: 10px 20px !important;
+font-size: 16px !important;
+font-weight: bold !important;
+margin-top: 20px !important;
+}

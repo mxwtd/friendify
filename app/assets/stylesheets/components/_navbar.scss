@@ -1,12 +1,19 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
-
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+.logo-friendify {
+  scale: 2;
+  margin-left: 2rem;
+}
+.nav-link:hover {
+  color: #F2474D !important;
+  font-weight: 500;
 }
