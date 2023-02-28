@@ -8,14 +8,19 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <%# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> %>
+
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
-    <% if user_signed_in? %>
-      <h2>Hi <%= current_user.email %></h2>
-    <% end %>
+    <div class="content">
+      <%= yield %>
+    </div>
   </body>
 </html>

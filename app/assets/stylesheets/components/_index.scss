@@ -5,52 +5,125 @@
 @import "navbar";
 
 html {
-    font-size: 16px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-  }
-.container {
-margin-top: 2rem;
-margin-bottom: 2rem;
-height: 15rem;
+  font-size: 16px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
+
+body {
+  background-color: #e0e0e0;
+}
+
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  height: 15rem;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+}
+
 .banner {
-background-size: cover;
-background-position: center;
-padding: 150px 0;
+  margin-top: 6%;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  width: 90%;
+  max-width: 90%;
+  border-radius: 2rem;
 }
 .banner h1 {
-margin: 0;
-color: white;
-text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-font-size: 32px;
-font-weight: bold;
-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 .banner p {
-font-size: 20px;
-color: white;
-opacity: .7;
-text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 .join-btn {
-background-color: #EA443A;
-color: white;
-border: none;
-border-radius: 5px;
-padding: 10px 20px;
-font-size: 16px;
-font-weight: bold;
-margin-top: 20px;
-text-decoration: none;
+  background-color: #EA443A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-decoration: none;
 }
 .join-btn:hover {
-background-color: #C62E33 !important;
-color: white !important;
-border: none !important;
-border-radius: 5px !important;
-padding: 10px 20px !important;
-font-size: 16px !important;
-font-weight: bold !important;
-margin-top: 20px !important;
+  background-color: #C62E33 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  margin-top: 20px !important;
+}
+
+.btn {
+  background-color: #EA443A;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+.text-banner-container {
+  margin-left: 5%;
+  height: 15rem;
+}
+
+.user-homepage {
+  margin-top: 5%;
+  background-color: #EA443A;
+  height: 30rem;
+  width: 70%;
+  border-radius: 2rem;
+}
+
+.user-homepage h2 {
+  font-family: "Helvetica", sans-serif !important;
+  font-weight: 600;
+}
+
+// -------------------- GRID STYLE -----------------------
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.grid-title {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.grid-item {
+  background-color: #838383;
+  height: 15rem;
+  width: 12rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.friends-grid {
+  display: flex;
+  justify-content: center;
 }
