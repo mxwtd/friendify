@@ -28,9 +28,9 @@ end
 puts "create users"
 10.times do
   name = Faker::Name.first_name
-  User.create( 
+  User.create(
     name: name,
-    password: Faker::Alphanumeric.alpha(number: 10),
+    password: 'password',
     email: name+'@friend.com',
   )
 end
@@ -63,9 +63,9 @@ puts "Create Bookings"
 User.all.find_each do |user|
   2.times do |i|
     new_book = Booking.create!(
-      user_id: user.id, 
-      friend_id: user.friends[i].id, 
-      comment: Faker::Lorem.paragraph,  
+      user_id: user.id,
+      friend_id: user.friends[i].id,
+      comment: Faker::Lorem.paragraph,
     )
     user.bookings << new_book
     Friend.find(user.friends[i].id).bookings << new_book

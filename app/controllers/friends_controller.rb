@@ -1,6 +1,10 @@
 class FriendsController < ApplicationController
   def index
-    @friends = Friend.all
+    if current_user
+       @friends = current_user.friends
+    else
+      redirect_to new_user_session_path, notice: 'You are not logged in'
+    end
   end
 
   def show
@@ -40,10 +44,6 @@ class FriendsController < ApplicationController
     @friend = Friend.find(params[:id])
     @friend.is_friend = true
 
-  end
-
-  def information
-    @friend = Friend.find(params[:id])
   end
 
   private
