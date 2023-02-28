@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   root to: "friends#index"
   resources :friends
-  get "friends/:id/add_listing", to: "friends#add_listing" 
-  get "friends/:id/user_information", to: "friends#user_information"
+  get "friends/:id/add_listing", to: "friends#add_listing"
+  get "friends/:id/information", to: "friends#information"
 end
