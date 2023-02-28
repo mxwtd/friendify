@@ -1,11 +1,5 @@
-<h1>Friends#show</h1>
-<p>Find me in app/views/friends/show.html.erb</p>
-<%= @friend.description %>
-<%= @friend.location %>
-
-<h1> Friend information</h1>
-
 <div class="container">
+    <h1> Friend information</h1>
     <div class="my-container d-flex justfiy-content-space-between mt-5">
 
       <div class="item1 me-5" style="max-width: 70%;">
@@ -33,9 +27,9 @@
 
           <div class="person-details" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
 
-            <p><span class="name">Aaron, 25</span> years old
+            <p><span class="name"><%= @friend.name %>, <%= @friend.age %></span> years old
             <br>
-            New Jersey</p>
+            <%= @friend.location %></p>
 
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
 
