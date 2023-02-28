@@ -33,9 +33,9 @@ class FriendsController < ApplicationController
   end
 
   def destroy
-    # @friend = Friend.find(params[:id])
-    # @friend.destroy
-    # redirect_to friends_path, status: :see_other
+     @friend = Friend.find(params[:id])
+     @friend.destroy
+     redirect_to friends_path, status: :see_other
   end
 
   def add_listing
