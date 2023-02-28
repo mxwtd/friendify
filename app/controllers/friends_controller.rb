@@ -2,8 +2,6 @@ class FriendsController < ApplicationController
   def index
     if current_user
        @friends = current_user.friends
-    else
-      redirect_to "/", notice: 'You are not logged in'
     end
   end
 
