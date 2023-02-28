@@ -10,10 +10,26 @@
   width: 40px;
 }
 .logo-friendify {
-  scale: 2;
-  margin-left: 2rem;
+  max-width: 6rem;
+  margin-left: 1.5rem;
 }
 .nav-link:hover {
   color: #F2474D !important;
   font-weight: 500;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  margin-top: 3%;
+  width: 70%;
+  border-radius: 2rem;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+  backdrop-filter: blur( 2.5px );
+  -webkit-backdrop-filter: blur( 2.5px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

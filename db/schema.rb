@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_121947) do
   create_table "friends", force: :cascade do |t|
     t.text "description"
     t.text "location"
-    t.boolean "is_friend", default: false
+    t.boolean "is_friend"
     t.decimal "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
