@@ -60,6 +60,7 @@ body {
   text-decoration: none;
 }
 .join-btn:hover {
+  cursor: pointer;
   background-color: #C62E33 !important;
   color: white !important;
   border: none !important;
@@ -104,16 +105,19 @@ body {
   grid-gap: 20px;
   border-radius: 20px;
   overflow: hidden;
+  padding: 1rem;
 }
 
 .grid-title {
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 3%;
+  margin-bottom: 3%;
   text-align: center;
 }
 
 .grid-item {
-  background-color: #838383;
+  background-image: url("https://res.cloudinary.com/djr22sgp3/image/upload/v1677596838/lachlan-dempsey-6VPEOdpFNAs-unsplash_p6fxn1.jpg");
+  background-size: cover;
+  background-position: center;
   height: 15rem;
   width: 12rem;
   border-radius: 20px;
@@ -123,7 +127,46 @@ body {
   font-size: 24px;
 }
 
+.grid-item:hover {
+  cursor: pointer;
+  scale: 1.01;
+  transition: all 0.2s ease-in-out;
+}
+
 .friends-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.card-info-banner {
+  background-color: #EA443A;
+  height: 4rem;
+  width: 100%;
+  border-radius: 0 0 1rem 1rem;
+  margin-bottom: -11rem;
+  position: relative;
+}
+
+.more-btn {
+  background-color: #EA443A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+.more-btn:hover {
+  cursor: pointer;
+  background-color: #C62E33 !important;
+  color: white !important;
+  margin-top: 2rem;
+}
+
+.center-btn {
   display: flex;
   justify-content: center;
 }
