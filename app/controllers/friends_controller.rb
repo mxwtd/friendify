@@ -1,12 +1,12 @@
 class FriendsController < ApplicationController
   def index
     if current_user
-       @friends = current_user.friends
+      @friends = current_user.friends
     end
   end
 
   def show
-    @friend = Friend.find(params[:id])
+    @friends = Friend.where(user_id: params[:id])
   end
 
   def new
@@ -15,7 +15,7 @@ class FriendsController < ApplicationController
 
   def create
     raise
-    @new_friend = Bookmark.new(bookmark_params)
+    @new_friend = Friend.new(bookmark_params)
     @new_friend.list = @list
     @new_friend.save
 
