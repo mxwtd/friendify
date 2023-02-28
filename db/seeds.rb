@@ -59,17 +59,17 @@ Friend.all.find_each do |friend|
   friend.update!(is_friend: [true, false].sample)
 end
 
-puts "Create Bookings"
-User.all.find_each do |user|
-  2.times do |i|
-    new_book = Booking.create!(
-      user_id: user.id,
-      friend_id: user.friends[i].id,
-      comment: Faker::Lorem.paragraph,
-    )
-    user.bookings << new_book
-    Friend.find(user.friends[i].id).bookings << new_book
-  end
-end
+# puts "Create Bookings"
+# User.all.find_each do |user|
+#   2.times do |i|
+#     new_book = Booking.create!(
+#       user_id: user.id,
+#       friend_id: user.friends[i].id,
+#       comment: Faker::Lorem.paragraph,
+#     )
+#     user.bookings << new_book
+#     Friend.find(user.friends[i].id).bookings << new_book
+#   end
+# end
 
 puts "seeds finish"
