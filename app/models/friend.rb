@@ -3,5 +3,5 @@ class Friend < ApplicationRecord
   has_many :bookings
   validates :description, presence: true
   validates :location, presence: true
-  validates :price, presnece: true
+  validates :price, presence: true
 end
