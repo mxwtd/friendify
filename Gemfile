@@ -78,3 +78,6 @@ end
 
 gem "devise"
 gem 'faker'
+
+#generate random users
+gem 'random_users'
