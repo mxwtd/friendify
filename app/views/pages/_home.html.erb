@@ -4,7 +4,8 @@
           <div class="text-banner-container">
             <h1>Discover the power of <strong>human connection</strong>,</h1>
             <p>Join our community and start building lifelong friendships today!</p>
-            <a class="join-btn" href="users/sign_up">Join Now!</a>
+            <%= button_to "Join Now!", new_user_registration_path,
+      :class => "join-btn", :method => :get %>
           </div>
         </div>
       </div>

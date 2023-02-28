@@ -20,7 +20,7 @@ owners.each do |owner_name|
   name = owner_name
   User.create( 
     name: name,
-    password: '123',
+    password: '123456',
     email: name+'@friend.com',
   )
 end
@@ -37,10 +37,10 @@ end
 
 puts "create friends"
 User.all.find_each do |user|
-  friend_name = Faker::Name.name 
-  friend_age =  Faker::Number.between(from: 18, to: 80)
-  friend_email = friend_name + '@friend.com'
-  User.all.map { 
+  10.times do
+    friend_name = Faker::Name.name 
+    friend_age =  Faker::Number.between(from: 18, to: 80)
+    friend_email = friend_name + '@friend.com'
     user.friends << Friend.create!(
                                   description: Faker::Lorem.paragraph, 
                                   location: Faker::Address.city, 
@@ -51,7 +51,7 @@ User.all.find_each do |user|
                                   age: friend_age,
                                   email: friend_email
                                 ) 
-    }
+                              end
 end
 
 puts "set some friends to true"
@@ -59,17 +59,17 @@ Friend.all.find_each do |friend|
   friend.update!(is_friend: [true, false].sample)
 end
 
-puts "Create Bookings"
-User.all.find_each do |user|
-  2.times do |i|
-    new_book = Booking.create!(
-      user_id: user.id,
-      friend_id: user.friends[i].id,
-      comment: Faker::Lorem.paragraph,
-    )
-    user.bookings << new_book
-    Friend.find(user.friends[i].id).bookings << new_book
-  end
-end
+# puts "Create Bookings"
+# User.all.find_each do |user|
+#   2.times do |i|
+#     new_book = Booking.create!(
+#       user_id: user.id,
+#       friend_id: user.friends[i].id,
+#       comment: Faker::Lorem.paragraph,
+#     )
+#     user.bookings << new_book
+#     Friend.find(user.friends[i].id).bookings << new_book
+#   end
+# end
 
 puts "seeds finish"
