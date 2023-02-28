@@ -35,12 +35,11 @@ class FriendsController < ApplicationController
   end
 
   def destroy
-    raise
-     friend = Friend.find(params[:id])
-     friend_email = friend.email
-     friends_to_delete = Friend.where(email: friend_email)
-     friends_to_delete.each { |friend| friend.destroy }
-     redirect_to friends_path, status: :see_other
+    friend = Friend.find(params[:id])
+    friend_email = friend.email
+    friends_to_delete = Friend.where(email: friend_email)
+    friends_to_delete.each { |friend| friend.destroy }
+    redirect_to friends_path, status: :see_other
   end
 
   def add_listing
