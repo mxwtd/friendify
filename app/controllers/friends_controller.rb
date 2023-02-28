@@ -16,4 +16,8 @@ class FriendsController < ApplicationController
 
   def add_listing
   end
+
+  def user_information
+
+  end
 end
