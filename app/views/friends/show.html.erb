@@ -11,8 +11,8 @@
               <br>
             <div class="buttons">
               <%= link_to "Book", "#", class: "btn btn-primary" %>
-              <%= link_to "Delete", "#", class: "btn btn-primary" %>
-              <%= link_to "Edit", "#", class: "btn btn-primary" %>
+              <%= link_to "Delete", friend_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary"%>
+              <%= link_to "Edit", edit_friend_path, class: "btn btn-primary" %>
             </div>
           </div>
         </div>
