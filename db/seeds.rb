@@ -21,7 +21,14 @@ end
 
 puts "create friends"
 User.all.find_each do |user|
-  User.all.map { user.friends << Friend.create!(description: Faker::Lorem.paragraph, location: Faker::Address.city, price: Faker::Number.decimal_part(digits: 2), user_id: user.id) }
+  User.all.map { 
+    user.friends << Friend.create!(
+                                  description: Faker::Lorem.paragraph, 
+                                  location: Faker::Address.city, 
+                                  price: Faker::Number.decimal_part(digits: 2), 
+                                  user_id: user.id
+                                ) 
+    }
 end
 
 puts "set some friends to true"
