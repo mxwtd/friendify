@@ -113,6 +113,7 @@ body {
   margin-top: 3%;
   margin-bottom: 3%;
   text-align: center;
+  font-weight: 600;
 }
 
 .grid-item {
@@ -170,4 +171,67 @@ body {
 .center-btn {
   display: flex;
   justify-content: center;
+}
+
+.friend-names {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-p {
+  width: 30%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 520;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  color: #EA443A;
+  border-radius: 1rem;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+  backdrop-filter: blur( 2.5px );
+  -webkit-backdrop-filter: blur( 2.5px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.text-decoration-none {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 520;
+}
+
+.text-decoration-none:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.new-friend-container {
+  display: flex;
+  justify-content: center;
+}
+
+.new-friend {
+  width: 80%;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+  backdrop-filter: blur( 2.5px );
+  -webkit-backdrop-filter: blur( 2.5px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.new-title {
+  margin-top: 4%;
+  margin-bottom: 3%;
+  text-align: center;
+  font-weight: 600;
 }

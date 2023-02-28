@@ -7,8 +7,9 @@
           <%= link_to friend_path(friend), class:"text-decoration-none" do %>
             <div class="grid-item">
               <div class="grid-item">
-                <div class="card-info-banner"></div>
-                <p><%= friend.name %></p>
+                <div class="card-info-banner">
+                  <p class="friend-names"><%= friend.name %></p>
+                </div>
               </div>
             </div>
           <% end %>
