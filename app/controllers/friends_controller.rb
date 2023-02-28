@@ -11,6 +11,14 @@ class FriendsController < ApplicationController
     @friend = Friend.new
   end
 
+  def create
+    raise
+    @new_friend = Bookmark.new(bookmark_params)
+    @new_friend.list = @list
+    @new_friend.save
+
+    # redirecst_to friends_path(@f)
+  end
 
   def edit
     @friend = Friend.find(params[:id])

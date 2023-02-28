@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'friends/index'
   get 'friends/show'
+  get 'friends/new'
+  get 'friends/create'
   get 'friends/edit'
   get 'friends/update'
   get 'friends/destroy'

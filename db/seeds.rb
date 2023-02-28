@@ -14,6 +14,17 @@ require 'faker'
 #     console.log(data)
 #   })
 
+puts "create owners data"
+owners = ["max", "elizableth", "amir", "tom", "santiago"]
+owners.each do |owner_name|
+  name = owner_name
+  User.create( 
+    name: name,
+    password: '123',
+    email: name+'@friend.com',
+  )
+end
+
 puts "create users"
 10.times do
   name = Faker::Name.first_name
