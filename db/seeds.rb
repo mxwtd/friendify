@@ -14,7 +14,6 @@ require 'faker'
 #     console.log(data)
 #   })
 
-Create users
 puts "create users"
 10.times do
   name = Faker::Name.first_name
@@ -27,12 +26,19 @@ end
 
 puts "create friends"
 User.all.find_each do |user|
+  friend_name = Faker::Name.name 
+  friend_age =  Faker::Number.between(from: 18, to: 80)
+  friend_email = friend_name + '@friend.com'
   User.all.map { 
     user.friends << Friend.create!(
                                   description: Faker::Lorem.paragraph, 
                                   location: Faker::Address.city, 
                                   price: Faker::Number.decimal_part(digits: 2), 
-                                  user_id: user.id
+                                  user_id: user.id,
+                                  photo_url: Faker::Avatar.image,
+                                  name: friend_name,
+                                  age: friend_age,
+                                  email: friend_email
                                 ) 
     }
 end
