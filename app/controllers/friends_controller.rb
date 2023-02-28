@@ -43,7 +43,6 @@ class FriendsController < ApplicationController
   def add_listing
     @friend = Friend.find(params[:id])
     @friend.is_friend = true
-
   end
 
   private
