@@ -1,18 +1,25 @@
 <% if user_signed_in? %>
+  <%= @friends[0].name %>
   <div class="friends-grid">
-    <div>
+  <div>
     <h2 class="grid-title">Find new Friends</h2>
       <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-        <div class="grid-item">7</div>
-        <div class="grid-item">8</div>
+        <% @friends.each do |friend| %>
+          <%= link_to friend_path(friend), class:"text-decoration-none" do %>
+            <div class="grid-item">
+              <div class="grid-item">
+                <div class="card-info-banner"></div>
+                <h1><%= friend.name %></h1>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
+  </div>
+  <div class="center-btn">
+    <%= button_to "Add Friends", friends_new_path,
+        :class => "more-btn", :method => :get %>
   </div>
   <% else %>
     <%= render 'pages/home' %>
