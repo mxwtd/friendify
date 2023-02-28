@@ -42,3 +42,10 @@
     <a class="join-btn" href="users/sign_up">Join Now!</a>
   </div>
 </div>
+
+
+<!--HERE WE CAN ITERATE THROUGH FRIENDS -->
+<p>How many friends I have? <%= @friends.count %></p>
+<% @friends.each do |friend| %>
+<%= friend.description %>
+<% end %>

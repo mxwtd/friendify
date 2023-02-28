@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'friends/index'
   get 'friends/show'
+  get 'friends/new'
+  get 'friends/create'
   get 'friends/edit'
   get 'friends/update'
   get 'friends/destroy'
@@ -15,5 +17,4 @@ Rails.application.routes.draw do
   root to: "friends#index"
   resources :friends
   get "friends/:id/add_listing", to: "friends#add_listing"
-  get "friends/:id/information", to: "friends#information"
 end
