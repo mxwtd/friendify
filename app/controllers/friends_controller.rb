@@ -6,7 +6,7 @@ class FriendsController < ApplicationController
   end
 
   def show
-    @friends = Friend.where(user_id: params[:id])
+    @friend = Friend.find(params[:id])
   end
 
   def new
@@ -14,12 +14,12 @@ class FriendsController < ApplicationController
   end
 
   def create
-    raise
-    @new_friend = Friend.new(bookmark_params)
-    @new_friend.list = @list
-    @new_friend.save
-
-    # redirecst_to friends_path(@f)
+    User.all.find_each do |user|
+      @new_friend = Friend.new(friends_params)
+      @new_friend.user_id = user.id
+      @new_friend.save
+    end
+    redirect_to friends_path
   end
 
   def edit
@@ -46,6 +46,6 @@ class FriendsController < ApplicationController
   private
 
   def friends_params
-    params.require(:friend).permit(:description, :location, :price)
+    params.require(:friend).permit(:name, :age, :email,:description, :location, :price)
   end
 end

@@ -10,3 +10,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+.general-container {
+  display: flex;
+  justify-content: center;
+}

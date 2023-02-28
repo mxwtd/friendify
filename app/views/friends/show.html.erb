@@ -1,4 +1,45 @@
-<h1>Friends#show</h1>
-<p>Find me in app/views/friends/show.html.erb</p>
-<%= @friend.description %>
-<%= @friend.location %>
+<div class="container">
+    <h1> Friend information</h1>
+    <div class="my-container d-flex justfiy-content-space-between mt-5">
+
+      <div class="item1 me-5" style="max-width: 70%;">
+        <div class="book-card">
+            <img src="https://images.unsplash.com/photo-1614713568397-b31b779d0498?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1725&q=80g" />
+            <div class="card-trip-infos">
+            <div>
+              <h2>Activity:</h2>
+              <p>I am a big fan of the New Jersey Bowling Club and i would love to have a friend to go bowling with all the time. I always come along with a few bottles of beer to make everything more fun. Drop me a message if you are the right friend!</p>
+            </div>
+              <br>
+            <div class="buttons">
+              <%= link_to "Book", "#", class: "btn btn-primary" %>
+              <%= link_to "Delete", "#", class: "btn btn-primary" %>
+              <%= link_to "Edit", "#", class: "btn btn-primary" %>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-info" style="width: 100%;">
+
+          <div class="person-details" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+
+            <p><span class="name"><%= @friend.name %>, <%= @friend.age %></span> years old
+            <br>
+            <%= @friend.location %></p>
+
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+
+          </div>
+
+          <div class="location-details" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.google.com/maps/vt/data=QVVZfuShGky8tQRvX6yPIayS_vCwR3EMz4mRn2rrXIuVWOgirAKBTMSkl7AyVZVPgbBuwksFEzg7xPHR17pnq8AjDrdt0Ds5ye43-oOos0H5qwemkKBT1q59umlf7RJlxdvNOgu2Ns7XSFpAwaimXlWW8oaDizVmLoeObkIhVRUUStJKkbpMiOnrQmS_eWSfo9A7v67hJMrOjNv9vvEUM93lFw68XxoQAAOAnYWT4Wm_j4uV2RU_c76KDKvHTFNhfMUkxIU)">
+          </div>
+
+      </div>
+
+    </div>
+
+</div>
