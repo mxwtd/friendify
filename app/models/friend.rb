@@ -4,4 +4,5 @@ class Friend < ApplicationRecord
   validates :description, presence: true
   validates :location, presence: true
   validates :price, presence: true
+  validates :email, presence: true
 end

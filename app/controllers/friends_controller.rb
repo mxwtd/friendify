@@ -27,14 +27,19 @@ class FriendsController < ApplicationController
   end
 
   def update
-    @friend = Friend.find(params[:id])
-    @friend = Friend.update(friends_params)
-    redirect_to friends_path(friends_params)
+    friend = Friend.find(params[:id])
+    friend_email = friend.email
+    friends_to_edit = Friend.where(email: friend_email)
+    friends_to_edit.each { |friend| friend.update(friends_params) }
+    redirect_to friends_path
   end
 
   def destroy
-     @friend = Friend.find(params[:id])
-     @friend.destroy
+    raise
+     friend = Friend.find(params[:id])
+     friend_email = friend.email
+     friends_to_delete = Friend.where(email: friend_email)
+     friends_to_delete.each { |friend| friend.destroy }
      redirect_to friends_path, status: :see_other
   end
 

@@ -35,23 +35,37 @@ puts "create users"
   )
 end
 
-puts "create friends"
+puts "create friends data"
+new_friends = Array.new
+
+10.times do
+  first_name = Faker::Name.first_name 
+  new_friend = {
+    name: first_name,
+    age:  Faker::Number.between(from: 18, to: 80),
+    email: first_name + '@friend.com',
+    description: Faker::Lorem.paragraph, 
+    location: Faker::Address.city, 
+    price: Faker::Number.decimal_part(digits: 2), 
+    photo_url: Faker::Avatar.image,
+  }
+  new_friends << new_friend
+end
+
+puts "create friends instances"
 User.all.find_each do |user|
-  10.times do
-    friend_name = Faker::Name.name 
-    friend_age =  Faker::Number.between(from: 18, to: 80)
-    friend_email = friend_name + '@friend.com'
+  new_friends.each do |friend|
     user.friends << Friend.create!(
-                                  description: Faker::Lorem.paragraph, 
-                                  location: Faker::Address.city, 
-                                  price: Faker::Number.decimal_part(digits: 2), 
-                                  user_id: user.id,
-                                  photo_url: Faker::Avatar.image,
-                                  name: friend_name,
-                                  age: friend_age,
-                                  email: friend_email
-                                ) 
-                              end
+      name: friend[:name],
+      age: friend[:age],
+      email: friend[:email],
+      photo_url: friend[:photo_url],
+      description: friend[:description], 
+      location: friend[:location], 
+      price: friend[:price], 
+      user_id: user.id
+    )
+  end
 end
 
 puts "set some friends to true"

@@ -2,11 +2,10 @@
 <p>Find me in app/views/friends/edit.html.erb</p>
 
 <%= simple_form_for @friend do |t| %>
+  <%= t.input :name %>
+  <%= t.input :age %>
   <%= t.input :description %>
   <%= t.input :location %>
   <%= t.input :price %>
-  <%= t.input :name %>
-  <%= t.input :age %>
-  <%= t.input :email %>
-  <%= t.submit %>
+  <%= t.submit class: "center-btn more-btn"  %>
 <% end %>
