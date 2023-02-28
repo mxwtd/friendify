@@ -14,6 +14,8 @@ require 'faker'
 #     console.log(data)
 #   })
 
+User.create!(name: "admin", password: 'admin123', email: 'admin@friend.com')
+
 puts "create owners data"
 owners = ["max", "elizableth", "amir", "tom", "santiago"]
 owners.each do |owner_name|
@@ -21,7 +23,7 @@ owners.each do |owner_name|
   User.create( 
     name: name,
     password: '123456',
-    email: name+'@friend.com',
+    email: name + '@friend.com',
   )
 end
 
@@ -31,7 +33,7 @@ puts "create users"
   User.create(
     name: name,
     password: 'password',
-    email: name+'@friend.com',
+    email: name + '@friend.com',
   )
 end
 
