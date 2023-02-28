@@ -3,7 +3,7 @@ class FriendsController < ApplicationController
     if current_user
        @friends = current_user.friends
     else
-      redirect_to new_user_session_path, notice: 'You are not logged in'
+      redirect_to "/", notice: 'You are not logged in'
     end
   end
 

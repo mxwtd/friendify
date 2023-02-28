@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root to: "friends#index"
+  root to: "pages#home"
   resources :friends
   get "friends/:id/add_listing", to: "friends#add_listing"
 end
