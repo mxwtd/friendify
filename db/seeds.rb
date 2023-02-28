@@ -14,26 +14,32 @@ require 'faker'
 #     console.log(data)
 #   })
 
-Create users
+# Create users
+puts 'destroying seeds'
+Booking.destroy_all
+Friend.destroy_all
+User.destroy_all
+puts 'seeds destroyed'
+
 puts "create users"
 10.times do
   name = Faker::Name.first_name
-  User.create( 
+  User.create(
     name: name,
-    password: Faker::Alphanumeric.alpha(number: 10),
+    password: 'password',
     email: name+'@friend.com',
   )
 end
 
 puts "create friends"
 User.all.find_each do |user|
-  User.all.map { 
+  User.all.map {
     user.friends << Friend.create!(
-                                  description: Faker::Lorem.paragraph, 
-                                  location: Faker::Address.city, 
-                                  price: Faker::Number.decimal_part(digits: 2), 
+                                  description: Faker::Lorem.paragraph,
+                                  location: Faker::Address.city,
+                                  price: Faker::Number.decimal_part(digits: 2),
                                   user_id: user.id
-                                ) 
+                                )
     }
 end
 
@@ -46,9 +52,9 @@ puts "Create Bookings"
 User.all.find_each do |user|
   2.times do |i|
     new_book = Booking.create!(
-      user_id: user.id, 
-      friend_id: user.friends[i].id, 
-      comment: Faker::Lorem.paragraph,  
+      user_id: user.id,
+      friend_id: user.friends[i].id,
+      comment: Faker::Lorem.paragraph,
     )
     user.bookings << new_book
     Friend.find(user.friends[i].id).bookings << new_book
