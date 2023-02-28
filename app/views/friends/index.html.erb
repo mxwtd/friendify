@@ -45,7 +45,8 @@
   </div>
 </div>
 <div class="center-btn">
-  <a class="more-btn">More Friends<a>
+  <%= button_to "Add Friends", friends_new_path,
+      :class => "more-btn", :method => :get %>
 </div>
   <% else %>
     <%= render 'pages/home' %>
