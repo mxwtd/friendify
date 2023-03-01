@@ -235,3 +235,33 @@ body {
   text-align: center;
   font-weight: 600;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .logo-friendify {
+    margin-left: -0.3rem;
+  }
+
+  .navbar-toggler {
+    border: none;
+    margin-right: -0.3rem;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.6rem;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 1rem;
+  }
+
+  .grid-item {
+    width: 100%;
+  }
+
+  .footer-p {
+    width: 45%;
+    font-size: 1.1rem;
+  }
+}

@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "friends#index"
-  resources :friends
+  resources :friends do
+    resources :bookings
+  end
   get "friends/:id/add_listing", to: "friends#add_listing"
+  get "homepage", to: "pages#home"
+  get "bookings", to: "bookings#bookings_list"
 end
