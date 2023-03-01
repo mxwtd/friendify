@@ -1,11 +1,13 @@
-<h1>Friends#edit</h1>
-<p>Find me in app/views/friends/edit.html.erb</p>
-
-<%= simple_form_for @friend do |t| %>
-  <%= t.input :name %>
-  <%= t.input :age %>
-  <%= t.input :description %>
-  <%= t.input :location %>
-  <%= t.input :price %>
-  <%= t.submit class: "center-btn more-btn"  %>
-<% end %>
+<div class="new-friend-container">
+  <div class="new-friend">
+  <h3 class="new-title">Edit a Friend</h3>
+    <%= simple_form_for @friend do |t| %>
+      <%= t.input :name %>
+      <%= t.input :age %>
+      <%= t.input :description %>
+      <%= t.input :location %>
+      <%= t.input :price %>
+      <%= t.submit class: "center-btn more-btn"  %>
+    <% end %>
+  </div>
+</div>
