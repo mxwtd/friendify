@@ -19,10 +19,10 @@
             <p><%= @friend.location %></p>
           </div>
           <div class="item-avatar">
-            <% if !(Friend.find(@friend.id).photo_url.blank?)%>
-              <%= image_tag Friend.find(@friend.id).photo_url, class: "avatar-img" %>
+            <% if Friend.find(@friend.id).photo.attached? %>
+              <%= cl_image_tag Friend.find(@friend.id).photo.key, class: "avatar-img" %>
             <% else %>
-              <%= image_tag "https://robohash.org/doloribusaccusamusut.png?size=300x300&set=set1", class: "avatar-img" %>
+              <%= cl_image_tag "default_friend_profile", class: "avatar-img" %>
             <% end %>
           </div>
           <div class="item-menu">
