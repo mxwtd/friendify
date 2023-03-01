@@ -34,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_121947) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo_url", default: "https://robohash.org/doloribusaccusamusut.png?size=300x300&set=set1"
+    t.string "photo_url"
     t.string "name"
     t.integer "age"
     t.string "email"
