@@ -12,10 +12,10 @@
         <ul class="navbar-nav me-auto">
           <% if user_signed_in? %>
             <li class="nav-item active">
-             <%= link_to "Home", "#", class: "nav-link" %>
+             <%= link_to "Home", "/homepage", class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Friends", href="/friends", class: "nav-link" %>
+              <%= link_to "Friends", friends_path, class: "nav-link" %>
             </li>
             <li class="nav-item dropdown">
               <%= image_tag "https://res.cloudinary.com/djr22sgp3/image/upload/v1677517298/Boris_Johnson_official_portrait__cropped_16.09.10_hkfyil.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
