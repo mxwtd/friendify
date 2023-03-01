@@ -1,85 +1,9 @@
-.book-card {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 100%;
-  height: 65%;
-  border-radius: 25px;
-  // margin-left: 32px;
-}
-
-.my-container {
-  border-radius: 25px;
-}
-
-
-.book-card > img {
-  height: 50%;
-  width: 100%;
-  object-fit: cover;
-
-}
-
-.book-card h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.book-card p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-
-.book-card .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
-.buttons{
-  display: flex;
-  justify-content: flex-end;
-}
-
-
-.person-details {
-  display: flex;
-  justify-content: space-between;
-  background-size: cover;
-  background-color: #EA443A;
-  background-position: center;
-  height: 100px;
-  width: 100%;
-  color: black;
-  font-size: 16px;
-  padding: 10px 10px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 36px;
-  border-radius: 25px;
-}
-
 .location-details {
   background-size: cover;
   border-radius: 25px;
-
   background-position: center;
   height: 260px;
   width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
   color: white;
   font-size: 24px;
@@ -88,16 +12,362 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 10px
 }
-.profile-info {
-  display: flex;
-  flex-direction: column;
-  column-gap: 5px;
-  border-radius: 25px;
-
-
-}
 
 .name {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
+  line-height: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+// ---------------- NEW CSS ----------------
+
+.grid-master {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.grid-container-friend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two columns */
+  grid-template-rows: auto auto auto; /* two rows, auto height */
+  gap: 1rem; /* gap between grid items */
+  padding: 0 10%;
+  max-width: 640px;
+  margin-left: -35%;
+}
+
+.grid-activity-card {
+  grid-column: 1 / 2; /* first column */
+  grid-row: 1 / 4; /* spans both rows */
+}
+
+.grid-activity-card img {
+  width: 40rem;
+  object-fit: cover;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.grid-activity-container {
+  background-color: rgb(242, 242, 242);
+  padding: 10px;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.grid-activity-container h2 {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.grid-activity-container p {
+  font-size: 1rem;
+  opacity: .7;
+  margin: 0;
+  padding: 1rem 6rem 1rem 1rem;
+}
+
+.info-card-details-master {
+  grid-column: 2 / 3; /* second column */
+  grid-row: 1 / 2; /* first row */
+}
+
+.item-price {
+  grid-column: 2 / 3; /* second column */
+  grid-row: 2 / 3; /* second row */
+}
+
+.price-details {
+  background-color: rgb(242, 242, 242);
+  border-radius: 2rem;
+  min-height: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.item-map {
+  grid-column: 2 / 3; /* second column */
+  grid-row: 3 / 4; /* second row */
+  margin-top: 0.5rem;
+}
+
+// ----------- Info Card - Avatar, Map and Name ---------------
+
+.personal-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns */
+  grid-template-rows: auto auto; /* two rows in first column, one row in second column */
+  gap: 10px; /* gap between grid items */
+  background-color: #d13d35;
+  color: #e9e5e5;
+  border-radius: 2rem;
+  padding: 1rem;
+  min-width: 100%;
+}
+
+.item-friend-name {
+  padding-top: 1.5rem;
+  grid-column: 1 / 2; /* first column */
+  grid-row: 1 / 2; /* first row in first column */
+}
+
+.item-location {
+  grid-column: 1 / 2; /* first column */
+  grid-row: 2 / 3; /* second row in first column */
+}
+
+.item-avatar {
+  grid-column: 2 / 3; /* second column */
+  grid-row: 1 / 3; /* spans both rows in second column */
+}
+
+.item-menu {
+  grid-column: 2 / 3; /* second column */
+  grid-row: 2 / 4; /* spans both rows in second column */
+  margin-top: -3.5rem;
+}
+
+.avatar-img {
+  margin-top: 1rem;
+  min-width: 4.5rem;
+  max-width: 4.5rem;
+  border-radius: 50%;
+  background-color: #e4e4e4;
+  border: 1px solid #2a2a2a;
+}
+
+// ----------- Button Menu ---------------
+
+section{
+  position: relative;
+}
+
+.btn-pluss{
+  overflow: hidden;
+  position: relative;
+  display: block;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 22px;
+  width: 4rem;
+  margin: 0 auto;
+  //padding-top: 25px;
+  background-color: white;
+  transition: width .3s .5s ease, border-radius 1.1s ease;
+  a{
+    display: block;
+    position: relative;
+    color: #FA434B;
+    text-decoration: none;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 5px;
+    &:hover{
+      text-decoration: inherit;
+      color: white;
+      background-color: #FA434B;
+      transition: background-color .5s ease;
+    }
+  }
+  &:after{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    line-height: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    background-color: #FA434B;
+    color: white;
+    transform: translateY(-50%) translateX(-50%);
+    transition: all .3s .5s ease;
+    cursor: pointer;
+    cursor: hand;
+  }
+  ul{
+    opacity: 0;
+  }
+  ul{
+    margin-top: 15px;
+    opacity: 0;
+    width: 100%;
+    margin-left: -1rem;
+    //height: 0;
+    transition: all .5s ease;
+    text-align: center;
+    font-size: 0.9rem;
+    li{
+      background-color: #e4e4e4;
+      margin-top: 5px;
+      border-radius: 5px;
+      width: 100%;
+      height: 0px;
+      overflow: hidden;
+      transition: height 1s ease;
+    }
+  }
+
+  //
+}
+.tooltip{
+  position: relative;
+  padding: 5px;
+  border-radius: 5px;
+  width: 70px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  animation-duration: 3s;
+  animation-name: jump;
+  animation-iteration-count: infinite;
+  background-color: #fff;
+  color: #FA434B;
+  transition: all 1s ease;
+  pointer-events: none;
+  &::after{
+    content: '';
+    position: absolute;
+    transform: rotate(45deg);
+    display: block;
+    height: 10px;
+    width: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: inherit;
+  }
+  &::before{
+    content: '';
+    color: white;
+  }
+}
+.btn-pluss-wrapper:hover{
+  .tooltip{
+    animation-duration: 0s;
+    transition: all 1s ease;
+    color: white;
+    width: 90px;
+    &::before{
+      content: 'Choose!';
+      display: block;
+      color: #FA434B;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      transform: translateY(-50%);
+      transition: all 1s .3s ease;
+    }
+  }
+  .btn-pluss{
+    width: 150px;
+    //height: 120px;
+    border-radius: 15px;
+    padding-bottom: 5px;
+    transition: width .3s ease, border-radius .3s ease, padding-bottom .3s ease;
+    &::after{
+      transition: all .3s ease;
+      left: 50%;
+      top: 10px;
+      transform: translateY(-5px) translateX(-50%);
+    }
+    ul{
+      opacity: 1;
+      //height: 100%;
+      margin-top: 30px;
+      transition: all 1s ease;
+    }
+    li{
+      height: 25px;
+      transition: height 1s ease;
+      &:hover{
+        border-bottom: 1px solid darken(#e9e5e5, 10);;
+      }
+    }
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateY(3px)
+  }
+  50% {
+    transform: translateY(-15px)
+  }
+   100% {
+    transform: translateY(3px)
+  }
+}
+
+
+@media screen and (max-width: 868px) {
+  .grid-container-friend {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    margin-left: 2%;
+  }
+
+
+  .info-card-details-master {
+    grid-column: 1;
+    grid-row: 1 / 2;
+    max-width: 22.5rem;
+  }
+
+  .grid-activity-card {
+    margin-top: -6rem;
+    margin-bottom: 1rem;
+    grid-column: 1;
+    grid-row: 2 / 3;
+    max-width: 22.5rem;
+  }
+
+  .grid-activity-card img {
+    max-width: 22.5rem;
+  }
+
+  .item-price {
+    grid-column: 1;
+    grid-row: 3 / 4;
+  }
+
+  .price-details {
+    background-color: rgb(242, 242, 242);
+    border-radius: 2rem;
+    padding-top: 0.7rem;
+    min-height: 20%;
+    max-width: 22.5rem;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: -5rem;
+  }
+
+  .item-map {
+    grid-column: 1;
+    grid-row: 4 / 5;
+    height: 100%;
+    margin-top: -15rem;
+    max-width: 22.5rem;
+  }
+
+  .personal-info-grid {
+    margin-top: 1rem;
+  }
 }
