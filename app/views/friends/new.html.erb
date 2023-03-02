@@ -1,6 +1,9 @@
 <div class="new-friend-container">
   <div class="new-friend">
-  <h3 class="new-title">Add a Friend</h3>
+  <div class="profile-edit-picture-master">
+    <img class="profile-edit-picture" src="https://res.cloudinary.com/djr22sgp3/image/upload/v1677517298/Boris_Johnson_official_portrait__cropped_16.09.10_hkfyil.png">
+  </div>
+  <h3 class="new-title">Add an Activity</h3>
     <%= simple_form_for [@friend] do |f| %>
         <%= f.input :name, placeholder: 'Enter a name' %>
         <%= f.input :age, placeholder: '+18' %>
@@ -9,7 +12,7 @@
         <%= f.input :price, placeholder: '1.5' %>
         <%= f.input :description, placeholder: 'I like the cats' %>
         <%= f.input :photo_url, as: :file %>
-        <%= f.submit class: "center-btn more-btn" %>
+        <%= f.submit class: "more-btn", value: "update" %>
     <% end %>
   </div>
 </div>

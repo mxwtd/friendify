@@ -374,4 +374,13 @@ section{
   .personal-info-grid {
     margin-top: 1rem;
   }
+
+  .avatar-img {
+    margin-top: 0.4rem;
+    min-width: 3rem;
+    max-width: 3rem;
+    border-radius: 50%;
+    background-color: #e4e4e4;
+    border: 1px solid #2a2a2a;
+  }
 }

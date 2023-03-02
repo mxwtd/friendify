@@ -1,14 +1,24 @@
 <% if user_signed_in? %>
+  <div class="back-btn-flex">
+    <%= button_to "< Back", href="/homepage",
+        :class => "back-btn", :method => :get %>
+  </div>
+  <div class="add-btn-flex">
+    <%= button_to "+", href="friends/new",
+        :class => "add-btn", :method => :get %>
+  </div>
   <div class="friends-grid">
   <div>
-    <h2 class="grid-title">Find new Friends</h2>
+    <h2 class="grid-title">Available Activities</h2>
       <div class="grid-container">
         <% @friends.each do |friend| %>
           <%= link_to friend_path(friend), class:"text-decoration-none" do %>
             <div class="grid-item">
               <div class="grid-item">
                 <div class="card-info-banner">
-                  <p class="friend-names"><%= friend.name %></p>
+                  <p class="friend-names"><%= friend.name %>,</p>
+                  <p class="friend-ages"><%= friend.location %>📍</p>
+                  <p class="friend-price">£<%= friend.price %>0</p>
                 </div>
               </div>
             </div>
@@ -17,11 +27,6 @@
       </div>
     </div>
   </div>
-  <div class="center-btn">
-    <%= button_to "Add Friends", friends_new_path,
-        :class => "more-btn", :method => :get %>
-  </div>
   <% else %>
     <%= render 'pages/banner' %>
 <% end %>
-
