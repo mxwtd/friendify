@@ -1,4 +1,4 @@
-<h1 class="friend-info-h1"> Friend information</h1>
+<h1 class="friend-info-h1"> Activity information</h1>
 <%# ---------------------------------- %>
 <div class="grid-master">
   <div class="grid-container-friend">
@@ -38,8 +38,7 @@
             <div href="#" class="btn-pluss">
               <ul>
                 <li><%= link_to "Book", "#"%></li>
-                <li><%= link_to "Delete", friend_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
-                <li><%= link_to "Edit", edit_friend_path%></li>
+                <li><%= link_to "UnFriend", friend_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
               </ul>
             </nav>
           </div>
@@ -48,11 +47,17 @@
     </div>
     <div class="item-price">
       <div class="price-details">
-        <p><strong>Rate </strong>£<%= @friend.price %>per/Hr</p>
+        <p><strong>Activity Price </strong>£<%= @friend.price %></p>
       </div>
     </div>
     <div class="item-map">
       <div class="location-details" style="background-image: url(https://res.cloudinary.com/djr22sgp3/image/upload/v1677621888/map_lenulp.png)">
     </div>
+  </div>
+</div>
+<div class="bookings grid">
+  <h3>Book for the day.</h3>
+  <div class="bookings-main">
+    
   </div>
 </div>
