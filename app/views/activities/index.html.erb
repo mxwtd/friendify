@@ -3,12 +3,12 @@
   <div>
     <h2 class="grid-title">Find new Friends</h2>
       <div class="grid-container">
-        <% @friends.each do |friend| %>
-          <%= link_to friend_path(friend), class:"text-decoration-none" do %>
+        <% @activities.each do |activity| %>
+          <%= link_to activity_path(activity), class:"text-decoration-none" do %>
             <div class="grid-item">
               <div class="grid-item">
                 <div class="card-info-banner">
-                  <p class="friend-names"><%= friend.name %></p>
+                  <p class="friend-names"><%= User.find(activity.user_id).name %></p>
                 </div>
               </div>
             </div>
@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="center-btn">
-    <%= button_to "Add Friends", friends_new_path,
+    <%= button_to "Add Friends", activities_new_path,
         :class => "more-btn", :method => :get %>
   </div>
   <% else %>

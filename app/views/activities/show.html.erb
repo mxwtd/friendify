@@ -6,21 +6,21 @@
       <img src="https://images.unsplash.com/photo-1614713568397-b31b779d0498?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1725&q=80g" />
       <div class="grid-activity-container">
         <h2>Activity:</h2>
-        <p><%= @friend.description %></p>
+        <p><%= @activity.description %></p>
       </div>
     </div>
     <div class="info-card-details-master">
       <div class="info-card-details">
         <div class="personal-info-grid">
           <div class="item-friend-name">
-            <p><span class="name"><%= @friend.name %>,</span> <%= @friend.age %><p>
+            <p><span class="name"><%= @user_card.name %>,</span> <%= @user_card.age %><p>
           </div>
           <div class="item-location">
-            <p><%= @friend.location %></p>
+            <p><%= @activity.location %></p>
           </div>
           <div class="item-avatar">
-            <% if Friend.find(@friend.id).photo.attached? %>
-              <%= cl_image_tag Friend.find(@friend.id).photo.key, class: "avatar-img" %>
+            <% if @user_card.user_photo.attached? %>
+              <%= cl_image_tag @user_card.user_photo.key, class: "avatar-img" %>
             <% else %>
               <%= cl_image_tag "default_friend_profile", class: "avatar-img" %>
             <% end %>
@@ -35,12 +35,15 @@
             </div>
             <nav class="btn-pluss-wrapper">
             <h2 class="tooltip">Look!</h2>
-            <div href="#" class="btn-pluss">
-              <ul>
-                <li><%= link_to "Book", "#"%></li>
-                <li><%= link_to "Delete", friend_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
-                <li><%= link_to "Edit", edit_friend_path%></li>
-              </ul>
+            <% if current_user.id == @activity.user_id %>
+              <div href="#" class="btn-pluss">
+                <ul>
+                  <li><%= link_to "Book", "#"%></li>
+                  <li><%= link_to "Delete", activity_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+                  <li><%= link_to "Edit", edit_activity_path%></li>
+                </ul>
+              </div>
+            <% end %>
             </nav>
           </div>
         </div>
@@ -48,7 +51,7 @@
     </div>
     <div class="item-price">
       <div class="price-details">
-        <p><strong>Rate </strong>£<%= @friend.price %>per/Hr</p>
+        <p><strong>Rate </strong>£<%= @activity.price %>per/Hr</p>
       </div>
     </div>
     <div class="item-map">

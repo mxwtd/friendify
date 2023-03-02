@@ -15,69 +15,53 @@ require "open-uri"
 #     console.log(data)
 #   })
 
-User.create!(name: "admin", password: 'admin123', email: 'admin@friend.com')
+# User.create!(name: "admin", password: 'admin123', email: 'admin@friend.com')
 
 puts "create owners data"
 owners = ["max", "elizableth", "amir", "tom", "santiago"]
+age = 20
 owners.each do |owner_name|
+  photo_url = URI.open("https://res.cloudinary.com/dbyp3pr3d/image/upload/v1677766946/development/santiago.png")
   name = owner_name
-  User.create( 
+  new_user = User.new( 
     name: name,
     password: '123456',
     email: name + '@friend.com',
+    age: age
   )
+  new_user.user_photo.attach(io: photo_url, filename:  "#{name}.png", content_type: "image/png")
+  new_user.save!
 end
 
-puts "create users"
-1.times do
-  name = Faker::Name.first_name
-  User.create(
-    name: name,
-    password: 'password',
-    email: name + '@friend.com',
-  )
-end
+puts "create categories"
+categories = [
+  "sports",
+  "study",
+  "workout",
+  "outdoor",
+  "indoor",
+  "Sing"
+]
 
-puts "create friends data"
-new_friends = Array.new
+puts "create activities data"
 
-5.times do
-  first_name = Faker::Name.first_name 
-  new_friend = {
-    name: first_name,
-    age:  Faker::Number.between(from: 18, to: 80),
-    email: first_name + '@friend.com',
+5.times do |i|
+  current_user = User.find(i + 1)
+  photo = URI.open(Faker::Avatar.image)
+  activity = Activity.new(
     description: Faker::Lorem.paragraph, 
     location: Faker::Address.city, 
-    price: Faker::Number.decimal_part(digits: 2), 
-    photo_url: Faker::Avatar.image
-  }
-  new_friends << new_friend
-end
-
-puts "create friends instances"
-User.all.find_each do |user|
-  new_friends.each do |friend|
-    puts "createn friend"
-    photo = URI.open(friend[:photo_url])
-    friend = Friend.new(
-      name: friend[:name],
-      age: friend[:age],
-      email: friend[:email],
-      description: friend[:description], 
-      location: friend[:location], 
-      price: friend[:price], 
-      user_id: user.id
-    )
-    friend.photo.attach(io: photo, filename: friend[:name]+".png", content_type: "image/png")
-    new_friend = friend.save!
-    # user.friends << new_friend
-  end
+    price: Faker::Number.decimal_part(digits: 2),
+    category: categories.sample
+  )
+  activity.photo.attach(io: photo, filename:  (current_user.name) +".png", content_type: "image/png")
+  activity.user = current_user
+  activity.save!
 end
 
 puts "set some friends to true"
-Friend.all.find_each do |friend|
-  friend.update!(is_friend: [true, false].sample)
+Activity.all.find_each do |activity|
+  activity.update!(is_friend: [true, false].sample)
 end
 
 # puts "Create Bookings"

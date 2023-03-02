@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_01_193144) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_02_130641) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,31 +42,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_193144) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "bookings", force: :cascade do |t|
-    t.bigint "friend_id", null: false
-    t.bigint "user_id", null: false
-    t.text "comment"
-    t.date "start_date"
-    t.date "end_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["friend_id"], name: "index_bookings_on_friend_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
-  create_table "friends", force: :cascade do |t|
+  create_table "activities", force: :cascade do |t|
     t.text "description"
     t.text "location"
-    t.boolean "is_friend", default: false
+    t.boolean "is_friend"
     t.decimal "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo_url"
-    t.string "name"
-    t.integer "age"
-    t.string "email"
-    t.index ["user_id"], name: "index_friends_on_user_id"
+    t.string "photo"
+    t.string "category"
+    t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.text "comment"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "activity_id", null: false
+    t.index ["activity_id"], name: "index_bookings_on_activity_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,13 +75,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_193144) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "age"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "friends"
+  add_foreign_key "activities", "users"
+  add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
-  add_foreign_key "friends", "users"
 end

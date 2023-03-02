@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :friends
+  has_many :activities
   has_many :bookings
   has_one_attached :user_photo
   # after_commit :add_default_user_profile, on: %i[create update]
