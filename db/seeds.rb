@@ -61,7 +61,7 @@ puts "create activities data"
     price: Faker::Number.decimal_part(digits: 2),
     category: categories.sample
   )
-  activity.photo.attach(io: photo, filename:  (current_user.name) +".png", content_type: "image/png")
+  # activity.photo.attach(io: photo, filename:  (current_user.name) +".png", content_type: "image/png")
   activity.user = current_user
   activity.save!
 end
