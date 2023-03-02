@@ -4,7 +4,11 @@
   <div class="friend-grid-master">
     <div class="grid-container-friend">
       <div class="grid-activity-card container-generic">
-        <img src="https://images.unsplash.com/photo-1614713568397-b31b779d0498?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1725&q=80g" />
+        <% if @activity.photo.attached? %>
+          <%= cl_image_tag @activity.photo.key%>
+        <% else %>
+          <%= cl_image_tag "default_activity"%>
+        <% end %>
         <div class="grid-activity-container">
           <h2>Activity:</h2>
           <p><%= @activity.description %></p>
