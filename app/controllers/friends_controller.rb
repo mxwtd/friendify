@@ -2,13 +2,13 @@ class FriendsController < ApplicationController
   def index
     if current_user
       @friends = current_user.friends
-      user = User.find(current_user.id)
-
+      @user = User.find(current_user.id)
+      
       if @friends.count == 0
         friends_list = Friend.where(user_id: 1)
 
         friends_list.all.find_each do |friend|
-          user.friends << Friend.create!(
+          @user.friends << Friend.create!(
             name: friend.name,
             age: friend.age,
             email: friend.email,
@@ -16,7 +16,7 @@ class FriendsController < ApplicationController
             description: friend.description, 
             location: friend.location, 
             price: friend.price, 
-            user_id: user.id
+            user_id: @user.id
           )
         end
       end
