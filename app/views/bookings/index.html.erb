@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <h2>Make a booking</h2>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <%= booking.friend.name %>
+      <li><%= link_to friend_booking_path(booking.friend, booking) %></li>
+    <% end %>
+  </ul>
+<% end %>

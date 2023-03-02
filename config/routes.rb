@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   end
   get "friends/:id/add_listing", to: "friends#add_listing"
   get "homepage", to: "pages#home"
-  get "bookings", to: "bookings#bookings_list"
+  get "bookings", to: "bookings#index"
 end

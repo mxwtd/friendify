@@ -1,0 +1,6 @@
+<h3>Delete a Booking</h3>
+<%= simple_form_for [@friend, @booking] do |t| %>
+  <%= t.input :comment %>
+  <%= t.input :start_date %>
+  <%= t.submit %>
+<% end %>

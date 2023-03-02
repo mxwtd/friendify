@@ -4,6 +4,7 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "cards";
+@import "login";
 
 html {
   font-size: 16px;
@@ -14,10 +15,26 @@ body {
   background-color: #e0e0e0;
 }
 
+@-webkit-keyframes background_gradient {
+  0%{background-position:31% 0%}
+  50%{background-position:70% 100%}
+  100%{background-position:31% 0%}
+}
+@-moz-keyframes background_gradient {
+  0%{background-position:31% 0%}
+  50%{background-position:70% 100%}
+  100%{background-position:31% 0%}
+}
+@keyframes background_gradient {
+  0%{background-position:31% 0%}
+  50%{background-position:70% 100%}
+  100%{background-position:31% 0%}
+}
+
 .container {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  height: 15rem;
+  // height: 15rem;
 }
 
 .banner-container {

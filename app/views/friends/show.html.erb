@@ -1,4 +1,4 @@
-<h1> Friend information</h1>
+<h1 class="friend-info-h1"> Friend information</h1>
 <%# ---------------------------------- %>
 <div class="grid-master">
   <div class="grid-container-friend">
@@ -19,7 +19,11 @@
             <p><%= @friend.location %></p>
           </div>
           <div class="item-avatar">
-            <%= image_tag Friend.find(@friend.id).photo_url, class: "avatar-img" %>
+            <% if !(Friend.find(@friend.id).photo_url.blank?)%>
+              <%= image_tag Friend.find(@friend.id).photo_url, class: "avatar-img" %>
+            <% else %>
+              <%= image_tag "https://robohash.org/doloribusaccusamusut.png?size=300x300&set=set1", class: "avatar-img" %>
+            <% end %>
           </div>
           <div class="item-menu">
             <div class="menu-btn">
