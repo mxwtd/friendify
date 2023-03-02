@@ -12,31 +12,26 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 10px
 }
-
 .name {
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 0;
 }
-
 h1 {
   font-size: 2rem;
   font-weight: bold;
 }
-
 .friend-info-h1 {
   text-align: center;
   margin: 4rem 0;
 }
-
 // ---------------- NEW CSS ----------------
-
 .grid-total-master {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  margin-left: -5%
 }
-
 .friend-grid-master {
   grid-column: 1 / 3;
   grid-row: 1 / 2;
@@ -45,7 +40,6 @@ h1 {
   align-items: center;
   margin: 0 auto;
 }
-
 .booking-row-master {
   grid-column: 1 / 3;
   grid-row: 2 / 3;
@@ -53,7 +47,6 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
-
 .grid-container-friend {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* two columns */
@@ -63,24 +56,20 @@ h1 {
   max-width: 640px;
   margin-left: -35%;
 }
-
 .grid-activity-card {
   grid-column: 1 / 2; /* first column */
   grid-row: 1 / 4; /* spans both rows */
 }
-
 .grid-activity-card img {
   width: 40rem;
   object-fit: cover;
   border-radius: 2rem 2rem 0 0;
 }
-
 .grid-activity-container {
   background-color: rgb(242, 242, 242);
   padding: 10px;
   border-radius: 0 0 2rem 2rem;
 }
-
 .grid-activity-container h2 {
   margin-top: 5rem;
   font-size: 1.5rem;
@@ -88,24 +77,20 @@ h1 {
   margin: 0;
   padding: 1rem 1rem 0 1rem;
 }
-
 .grid-activity-container p {
   font-size: 1rem;
   opacity: .7;
   margin: 0;
   padding: 1rem 6rem 1rem 1rem;
 }
-
 .info-card-details-master {
   grid-column: 2 / 3; /* second column */
   grid-row: 1 / 2; /* first row */
 }
-
 .item-price {
   grid-column: 2 / 3; /* second column */
   grid-row: 2 / 3; /* second row */
 }
-
 .price-details {
   background-color: rgb(242, 242, 242);
   border-radius: 2rem;
@@ -114,22 +99,18 @@ h1 {
   padding-top: 1rem;
   font-size: 1.2rem;
 }
-
 .item-map {
   grid-column: 2 / 3; /* second column */
   grid-row: 3 / 4; /* second row */
   margin-top: 0.5rem;
 }
-
 .booking-intro {
   margin-top: 5%;
   margin-left: -50%;
 }
-
 .bookings-grid-master {
   width: 640px;
 }
-
 .bookings-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -138,80 +119,125 @@ h1 {
   gap: 10px;
   margin-top: 2%;
   margin-left: -7%;
-  background-color: #be6e6e;
+  background-color: #F2F2F2;
   border-radius: 2rem;
   padding: 1rem;
+  color: #111111;
 }
-
 .bookings-main {
   grid-column: 1 / 2;
   grid-row: 1;
 }
-
+#new_booking {
+  margin-top: 2rem;
+}
 .price-box-bookings {
   grid-column: 2 / 3;
   grid-row: 1;
+  margin-top: -4rem;
 }
-
 .price-box-text {
-  text-align: center;
+  text-align: left;
   font-size: 1.2rem;
-  background-color: #d13d35;
-  color: #e9e5e5;
+  background-color: #D13D35;
+  color: #E4E4E4;
+  border-radius: 1rem;
+  padding: 3rem 1.5rem 1rem 1.5rem;
+  margin-top: -3rem;
+  margin-left: 1rem;
+}
+.tab-booking {
+  background-color: #E4E4E4;
+  color: #2A2A2A;
+  padding: 0.2rem;
   border-radius: 1rem;
 }
-
+.tab-booking:hover {
+  scale: 1.1;
+  transition: all 0.2s ease-in-out;
+}
+.avatars-booking {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  margin-left: 25%;
+}
+.avatars-booking img {
+  width: 10rem;
+  border-radius: 50%;
+  background-color: #E4E4E4;
+  margin-left: -2rem;
+  border: 1px solid #D13D35;
+}
+.avatars-booking img:hover {
+  scale: 1.1;
+  transition: all 0.2s ease-in-out;
+}
+.booking-btn {
+  background-color: #EA443A;
+  color: #E4E4E4;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-decoration: none;
+}
+.booking-btn:hover {
+  cursor: pointer;
+  background-color: #AC2323 !important;
+  color: #E4E4E4 !important;
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  margin-top: 20px !important;
+}
 // ----------- Info Card - Avatar, Map and Name ---------------
-
 .personal-info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; /* two columns */
   grid-template-rows: auto auto; /* two rows in first column, one row in second column */
   gap: 10px; /* gap between grid items */
-  background-color: #d13d35;
-  color: #e9e5e5;
+  background-color: #D13D35;
+  color: #E9E5E5;
   border-radius: 2rem;
   padding: 1rem;
   min-width: 100%;
 }
-
 .item-friend-name {
   padding-top: 1.5rem;
   grid-column: 1 / 2; /* first column */
   grid-row: 1 / 2; /* first row in first column */
 }
-
 .item-location {
   grid-column: 1 / 2; /* first column */
   grid-row: 2 / 3; /* second row in first column */
 }
-
 .item-avatar {
   grid-column: 2 / 3; /* second column */
   grid-row: 1 / 3; /* spans both rows in second column */
 }
-
 .item-menu {
   grid-column: 2 / 3; /* second column */
   grid-row: 2 / 4; /* spans both rows in second column */
   margin-top: -3.5rem;
 }
-
 .avatar-img {
   margin-top: 0.4rem;
   min-width: 4rem;
   max-width: 4rem;
   border-radius: 50%;
-  background-color: #e4e4e4;
-  border: 1px solid #2a2a2a;
+  background-color: #E4E4E4;
+  border: 1px solid #2A2A2A;
 }
-
 // ----------- Button Menu ---------------
-
 section{
   position: relative;
 }
-
 .btn-pluss{
   overflow: hidden;
   position: relative;
@@ -271,7 +297,7 @@ section{
     text-align: center;
     font-size: 0.9rem;
     li{
-      background-color: #e4e4e4;
+      background-color: #E4E4E4;
       margin-top: 5px;
       border-radius: 5px;
       width: 100%;
@@ -280,7 +306,6 @@ section{
       transition: height 1s ease;
     }
   }
-
   //
 }
 .tooltip{
@@ -358,7 +383,7 @@ section{
       height: 25px;
       transition: height 1s ease;
       &:hover{
-        border-bottom: 1px solid darken(#e9e5e5, 10);;
+        border-bottom: 1px solid darken(#E9E5E5, 10);;
       }
     }
   }
@@ -374,8 +399,6 @@ section{
     transform: translateY(3px)
   }
 }
-
-
 @media screen and (max-width: 868px) {
   .grid-container-friend {
     display: grid;
@@ -383,14 +406,11 @@ section{
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     margin-left: 2%;
   }
-
-
   .info-card-details-master {
     grid-column: 1;
     grid-row: 1 / 2;
     max-width: 22.5rem;
   }
-
   .grid-activity-card {
     margin-top: -8rem;
     margin-bottom: 1rem;
@@ -398,16 +418,13 @@ section{
     grid-row: 2 / 3;
     max-width: 22.5rem;
   }
-
   .grid-activity-card img {
     max-width: 22.5rem;
   }
-
   .item-price {
     grid-column: 1;
     grid-row: 3 / 4;
   }
-
   .price-details {
     background-color: rgb(242, 242, 242);
     border-radius: 2rem;
@@ -418,7 +435,6 @@ section{
     font-size: 1.6rem;
     margin-bottom: -5rem;
   }
-
   .item-map {
     grid-column: 1;
     grid-row: 4 / 5;
@@ -426,17 +442,15 @@ section{
     margin-top: -14.5rem;
     max-width: 22.5rem;
   }
-
   .personal-info-grid {
     margin-top: 1rem;
   }
-
   .avatar-img {
     margin-top: 0.4rem;
     min-width: 3rem;
     max-width: 3rem;
     border-radius: 50%;
-    background-color: #e4e4e4;
-    border: 1px solid #2a2a2a;
+    background-color: #E4E4E4;
+    border: 1px solid #2A2A2A;
   }
 }

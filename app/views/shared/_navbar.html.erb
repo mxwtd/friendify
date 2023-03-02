@@ -15,12 +15,17 @@
              <%= link_to "Home", "/homepage", class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Friends", friends_path, class: "nav-link" %>
+              <%= link_to "Activities", activities_path, class: "nav-link" %>
             </li>
             <li class="nav-item dropdown">
-              <%= image_tag "https://res.cloudinary.com/djr22sgp3/image/upload/v1677517298/Boris_Johnson_official_portrait__cropped_16.09.10_hkfyil.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% if current_user.user_photo.attached? %>
+                <%= cl_image_tag current_user.user_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+              <% else %>
+                <%# <%= cl_image_tag current_user.user_photo_thumbnail, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false   %>
+                <%= cl_image_tag "default_user_profile", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false   %>
+              <% end %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "My Profile", friends_new_path, class: "dropdown-item" %>
+                <%= link_to "My Profile", activities_new_path, class: "dropdown-item" %>
                 <%= link_to "Another action", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
               </div>

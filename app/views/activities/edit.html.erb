@@ -1,9 +1,7 @@
 <div class="new-friend-container">
   <div class="new-friend">
-  <h3 class="new-title">Edit a Friend</h3>
-    <%= simple_form_for @friend do |t| %>
-      <%= t.input :name %>
-      <%= t.input :age %>
+  <h3 class="new-title">Edit activity</h3>
+    <%= simple_form_for @activity do |t| %>
       <%= t.input :description %>
       <%= t.input :location %>
       <%= t.input :price %>

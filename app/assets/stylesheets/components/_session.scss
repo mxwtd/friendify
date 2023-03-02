@@ -1,4 +1,4 @@
-.login-card-container {
+.register-card-container {
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -13,6 +13,7 @@
   padding: 8px 24px;
 }
 
-.login-card-container > h2 {
+.register-card-container > h2 {
   margin-top: 5px;
+  color: #EA443A;
 }

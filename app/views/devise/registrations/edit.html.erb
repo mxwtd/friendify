@@ -3,6 +3,14 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
+  <div class="field">
+    <% image_tag(resources.user_photo_thumbnail) if resource.user_photo.attached?%>
+  </div>
+
+  <div class="field">
+    <% f.file_field :user_photo %>
+  </div>
+
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
 
