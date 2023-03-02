@@ -1,0 +1,100 @@
+<h1 class="friend-info-h1"> Activity information</h1>
+<%# ---------------------------------- %>
+<div class="grid-total-master">
+  <div class="friend-grid-master">
+    <div class="grid-container-friend">
+      <div class="grid-activity-card container-generic">
+        <img src="https://images.unsplash.com/photo-1614713568397-b31b779d0498?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1725&q=80g" />
+        <div class="grid-activity-container">
+          <h2>Activity:</h2>
+          <p><%= @activity.description %></p>
+        </div>
+      </div>
+      <div class="info-card-details-master">
+        <div class="info-card-details">
+          <div class="personal-info-grid">
+            <div class="item-friend-name">
+              <p><span class="name"><%= @user_card.name %>,</span> <%= @user_card.age %><p>
+            </div>
+            <div class="item-location">
+              <p><%= @activity.location %></p>
+            </div>
+            <div class="item-avatar">
+              <% if @user_card.user_photo.attached? %>
+                <%= cl_image_tag @user_card.user_photo.key, class: "avatar-img" %>
+              <% else %>
+                <%= cl_image_tag "default_friend_profile", class: "avatar-img" %>
+              <% end %>
+            </div>
+            <div class="item-menu">
+              <div class="menu-btn">
+                <div class="menu" onclick="this.classList.toggle('open')">
+                  <div class="button"></div>
+                  <div class="button"></div>
+                  <div class="button"></div>
+              </div>
+              </div>
+              <nav class="btn-pluss-wrapper">
+              <h2 class="tooltip">Look!</h2>
+              <% if current_user.id == @activity.user_id %>
+                <div href="#" class="btn-pluss">
+                  <ul>
+                    <li><%= link_to "Delete", activity_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+                    <li><%= link_to "Edit", edit_activity_path%></li>
+                  </ul>
+                </div>
+              <% else %>
+                <div href="#" class="btn-pluss">
+                  <ul>
+                    <li><%= link_to "Book", "#"%></li>
+                    <li><%= link_to "UnFriend", activity_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+                  </ul>
+                </div>
+              <% end %>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-price">
+        <div class="price-details">
+          <p><strong>Activity Price </strong>£<%= @activity.price %></p>
+        </div>
+      </div>
+      <div class="item-map">
+        <div class="location-details" style="background-image: url(https://res.cloudinary.com/djr22sgp3/image/upload/v1677621888/map_lenulp.png)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="booking-row-master">
+  <div class="bookings-grid-master">
+    <div class="bookings-grid">
+      <div class="bookings-main">
+        <h3>Book your day.</h3>
+        <%= render 'bookings/new' %>
+      </div>
+      <div class="price-box-bookings">
+        <div class="avatars-booking">
+          <div class="avatar-booking">
+              <% if @user_card.user_photo.attached? %>
+                <%= cl_image_tag @user_card.user_photo.key, class: "avatar-booking" %>
+              <% else %>
+                <%= cl_image_tag "https://robohash.org/doloribusaccusamusut.png?size=300x300&set=set1", class: "avatar-booking" %>
+              <% end %>
+            </div>
+          <div class="avatar-booking">
+            <%= cl_image_tag current_user.user_photo.key, class: "avatar-booking" %>
+          </div>
+        </div>
+        <div class="price-box-text">
+          <h3>Activity Breakdown</h3>
+          <p class="tab-booking">💰 Price: £<%= @activity.price %></p>
+          <p class="tab-booking">🙎🏽‍♂️ In this booking: You & <%= @user_card.name %>.</p>
+          <p class="tab-booking">📍 Location: <%= @activity.location %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

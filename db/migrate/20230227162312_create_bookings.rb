@@ -4,8 +4,7 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.references :friend, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
       t.text :comment
-      t.date :start_date
-      t.date :end_date
+      t.date :date
 
       t.timestamps
     end

@@ -1,0 +1,34 @@
+<% if user_signed_in? %>
+  <div class="back-btn-flex">
+    <%= button_to "< Back", href="/homepage",
+        :class => "back-btn", :method => :get %>
+  </div>
+  <div class="add-btn-flex">
+    <%= button_to "+", new_activity_path,
+        :class => "add-btn", :method => :get %>
+  </div>
+  <div class="friends-grid">
+  <div>
+    <h2 class="grid-title">Available Activities</h2>
+      <div class="grid-container">
+        <% @activities.each do |activity| %>
+          <%= link_to activity_path(activity), class:"text-decoration-none" do %>
+            <div class="grid-item">
+              <div class="grid-item">
+                <div class="card-info-banner">
+                  <p class="friend-names"><%= User.find(activity.user_id).name %>,</p>
+                  <p class="friend-location"><%= activity.location %>📍</p>           
+                  <%= cl_image_tag User.find(activity.user_id).user_photo.key, class: "friend-avatar" %>
+                  <p class="friend-price">£<%= activity.price %>0</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% else %>
+    <%= render 'pages/banner' %>
+<% end %>
+

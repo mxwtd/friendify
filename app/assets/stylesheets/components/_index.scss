@@ -4,7 +4,7 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "cards";
-@import "login";
+@import "session";
 
 html {
   font-size: 16px;
@@ -115,7 +115,73 @@ body {
   font-weight: 600;
 }
 
+// --------------------- Home Page ---------------------
+
+// ---------------------- EDIT PROFILE PAGE -----------------------
+
+.profile-edit-picture-master {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-edit-picture {
+  margin-top: 5%;
+  width: 20%;
+  border-radius: 50%;
+}
+
 // -------------------- GRID STYLE -----------------------
+
+.back-btn-flex {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5%;
+}
+
+.back-btn {
+  font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+  margin-top: 2.25%;
+  position: absolute;
+  width: 25%;
+}
+
+.back-btn:hover {
+  cursor: pointer;
+  color: #EA443A;
+  scale: 1.1;
+  transition: all 0.2s ease-in-out;
+}
+
+.add-btn-flex {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20%;
+}
+
+.add-btn {
+  font-size: 1.8rem;
+  border: none;
+  background-color: #EA443A;
+  color: #e0e0e0;
+  font-weight: 900;
+  margin-top: 2.25%;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.add-btn:hover {
+  cursor: pointer;
+  background-color: #c6352d;
+  color: #ffffff;
+  scale: 1.1;
+  transition: all 0.2s ease-in-out;
+}
 
 .grid-container {
   display: grid;
@@ -144,6 +210,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  min-width: 15.5rem;
 }
 
 .grid-item:hover {
@@ -191,10 +258,41 @@ body {
 }
 
 .friend-names {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   margin-left: 1rem;
   text-align: left;
   font-size: 1rem;
+}
+
+.friend-location {
+  margin-top: -1.2rem;
+  margin-left: 1rem;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.friend-avatar {
+  width: 25%;
+  margin-top: -13rem;
+  margin-left: 70%;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+}
+
+.friend-price {
+  margin-top: -4.9rem;
+  margin-right: 0.9rem;
+  text-align: right;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.friend-price:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+  scale: 1.02;
+  transition: all 0.2s ease-in-out;
 }
 
 .footer-container {
@@ -254,7 +352,7 @@ body {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .logo-friendify {
     margin-left: -0.3rem;
   }
@@ -274,11 +372,52 @@ body {
   }
 
   .grid-item {
-    width: 100%;
+    min-width: 70%;
   }
 
   .footer-p {
     width: 45%;
     font-size: 1.1rem;
+  }
+
+  .friend-price {
+    margin-right: 0.5rem;
+  }
+
+  .friend-location {
+    font-size: 0.9rem;
+  }
+
+  .back-btn {
+    font-size: 1.2rem;
+    margin-left: -1.5rem;
+  }
+
+  .add-btn {
+    font-size: 1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 900px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.6rem;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.6rem;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 1rem;
   }
 }

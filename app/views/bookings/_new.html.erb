@@ -1,0 +1,4 @@
+<%= simple_form_for [@friend, @booking] do |f| %>
+  <%= f.input :comment, placeholder: 'insert text' %>
+  <%= f.input :date, as: :date, placeholder: 'date' %>
+<% end %>

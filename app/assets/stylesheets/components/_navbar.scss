@@ -11,9 +11,15 @@
 }
 .logo-friendify {
   max-width: 6rem;
-  margin-left: 1.2rem;
+  margin-left: 0.5rem;
   border-radius: 2rem;
 }
+
+.dropdown:hover {
+  scale: 1.05;
+  transition: all 0.2s ease-in-out;
+}
+
 .nav-link:hover {
   color: #F2474D !important;
   font-weight: 500;
@@ -24,9 +30,13 @@
   justify-content: center;
 }
 
+.nav-item {
+  cursor: pointer;
+}
+
 .navbar {
   margin-top: 3%;
-  width: 70%;
+  width: 75%;
   border-radius: 2rem;
   background: rgba( 255, 255, 255, 0.25 );
   box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
@@ -34,4 +44,3 @@
   -webkit-backdrop-filter: blur( 2.5px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-
