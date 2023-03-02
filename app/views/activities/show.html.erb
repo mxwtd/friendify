@@ -72,33 +72,35 @@
   </div>
 </div>
 
-<div class="booking-row-master">
-  <div class="bookings-grid-master">
-    <div class="bookings-grid">
-      <div class="bookings-main">
-        <h3>Book your day.</h3>
-        <%= render 'bookings/new' %>
-      </div>
-      <div class="price-box-bookings">
-        <div class="avatars-booking">
-          <div class="avatar-booking">
-              <% if @user_card.user_photo.attached? %>
-                <%= cl_image_tag @user_card.user_photo.key, class: "avatar-booking" %>
-              <% else %>
-                <%= cl_image_tag "https://robohash.org/doloribusaccusamusut.png?size=300x300&set=set1", class: "avatar-booking" %>
-              <% end %>
-            </div>
-          <div class="avatar-booking">
-            <%= cl_image_tag current_user.user_photo.key, class: "avatar-booking" %>
-          </div>
+<% if (current_user.id != @activity.user_id) %>
+  <div class="booking-row-master">
+    <div class="bookings-grid-master">
+      <div class="bookings-grid">
+        <div class="bookings-main">
+          <h3>Book your day.</h3>
+          <%= render 'bookings/new' %>
         </div>
-        <div class="price-box-text">
-          <h3>Activity Breakdown</h3>
-          <p class="tab-booking">💰 Price: £<%= @activity.price %></p>
-          <p class="tab-booking">🙎🏽‍♂️ In this booking: You & <%= @user_card.name %>.</p>
-          <p class="tab-booking">📍 Location: <%= @activity.location %></p>
+        <div class="price-box-bookings">
+          <div class="avatars-booking">
+            <div class="avatar-booking">
+                <% if @user_card.user_photo.attached? %>
+                  <%= cl_image_tag @user_card.user_photo.key, class: "avatar-booking" %>
+                <% else %>
+                  <%= cl_image_tag "https://robohash.org/doloribusaccusamusut.png?size=300x300&set=set1", class: "avatar-booking" %>
+                <% end %>
+              </div>
+            <div class="avatar-booking">
+              <%= cl_image_tag current_user.user_photo.key, class: "avatar-booking" %>
+            </div>
+          </div>
+          <div class="price-box-text">
+            <h3>Activity Breakdown</h3>
+            <p class="tab-booking">💰 Price: £<%= @activity.price %></p>
+            <p class="tab-booking">🙎🏽‍♂️ In this booking: You & <%= @user_card.name %>.</p>
+            <p class="tab-booking">📍 Location: <%= @activity.location %></p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
