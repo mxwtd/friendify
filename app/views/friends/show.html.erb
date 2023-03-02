@@ -33,7 +33,7 @@
             <h2 class="tooltip">Look!</h2>
             <div href="#" class="btn-pluss">
               <ul>
-                <li><%= link_to "Book", "#"%></li>
+                <li><%= link_to "Book", new_friend_booking_path(@friend) %></li>
                 <li><%= link_to "Delete", friend_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
                 <li><%= link_to "Edit", edit_friend_path%></li>
               </ul>
