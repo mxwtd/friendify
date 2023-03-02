@@ -13,9 +13,9 @@ class FriendsController < ApplicationController
             age: friend.age,
             email: friend.email,
             photo_url: friend.photo_url,
-            description: friend.description, 
-            location: friend.location, 
-            price: friend.price, 
+            description: friend.description,
+            location: friend.location,
+            price: friend.price,
             user_id: user.id
           )
         end
@@ -25,6 +25,7 @@ class FriendsController < ApplicationController
 
   def show
     @friend = Friend.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

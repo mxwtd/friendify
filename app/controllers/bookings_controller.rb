@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @friend = Friend.find(params[:friend_id])
   end
 
   def create
@@ -21,9 +22,8 @@ class BookingsController < ApplicationController
     end
   end
 
-  def bookings_list
-    
-  end
+  #def bookings_listS
+  #end
 
   private
 
