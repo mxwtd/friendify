@@ -85,3 +85,6 @@ gem 'random_users'
 
 # Gemfile
 gem "cloudinary"
+
+# MapBox
+gem 'mapbox-gl-rails'

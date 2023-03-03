@@ -596,6 +596,19 @@ figure.snip1157 .author h5 span {
     overflow: hidden;
     padding: 1rem;
   }
+
+  .text-banner-container {
+    margin-top: 3%;
+    margin-left: -1rem;
+  }
+
+  .text-banner-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .text-banner-container p {
+    font-size: 0.8rem;
+  }
 }
 
 @media only screen and (min-width: 2000px) {
