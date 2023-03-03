@@ -33,9 +33,9 @@
             </div>
             <div class="item-avatar">
               <% if @user_card.user_photo.attached? %>
-                <%= cl_image_tag @user_card.user_photo.key, class: "avatar-img" %>
+                <%= cl_image_tag @user_card.user_photo.key, :crop => "fill", :width => 80, :height => 80, class: "avatar-img" %>
               <% else %>
-                <%= cl_image_tag "default_friend_profile", class: "avatar-img" %>
+                <%= cl_image_tag "default_friend_profile", :crop => "fill", :width => 80, :height => 80, class: "avatar-img" %>
               <% end %>
             </div>
             <div class="item-menu">

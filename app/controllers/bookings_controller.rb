@@ -57,7 +57,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    raise
     activity = Activity.find(activity_params)
     @booking = Booking.new(booking_params)
     @booking.activity = activity
