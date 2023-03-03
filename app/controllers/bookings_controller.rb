@@ -6,6 +6,8 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @activity = Activity.find(@booking.activity_id)
+    @user_card = User.find(@activity.user_id)
   end
 
   def edit
