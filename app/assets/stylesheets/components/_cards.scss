@@ -2,7 +2,7 @@
   background-size: cover;
   border-radius: 25px;
   background-position: center;
-  height: 14.5rem;
+  height: 19.5rem;
   width: 100%;
   align-items: center;
   color: white;
@@ -62,6 +62,36 @@ h1 {
   grid-row: 1 / 4; /* spans both rows */
 }
 
+.activity-cont-master {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(242, 242, 242);
+  border-radius: 0 0 2rem 2rem;
+}
+
+.flex-activity-cat {
+  text-align: left;
+  padding-left: 1rem;
+  margin-left: -30%;
+  background-color: #AC2323;
+  color: #E4E4E4;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.cat-head {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.cat-date {
+  margin-top: -1rem;
+}
+
+.flex-activity-cat p {
+  font-size: 0.85rem;
+}
+
 .grid-activity-card img {
   width: 40rem;
   object-fit: cover;
@@ -118,10 +148,10 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  width: 55.5rem;
+  width: 54.5rem;
   gap: 10px;
   margin-top: 2%;
-  margin-left: -7%;
+  margin-left: -3%;
   background-color: #F2F2F2;
   border-radius: 2rem;
   padding: 1rem;
@@ -271,8 +301,6 @@ h1 {
 }
 .avatar-img {
   margin-top: 0.4rem;
-  min-width: 4rem;
-  max-width: 4rem;
   border-radius: 50%;
   background-color: #E4E4E4;
   border: 1px solid #2A2A2A;

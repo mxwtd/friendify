@@ -9,9 +9,17 @@
         <% else %>
           <%= cl_image_tag "default_activity" %>
         <% end %>
-        <div class="grid-activity-container">
-          <h2>Activity:</h2>
-          <p><%= @activity.description %></p>
+        <div class="activity-cont-master">
+          <div class="grid-activity-container">
+            <h2>Activity:</h2>
+            <p><%= @activity.description %></p>
+          </div>
+          <div class="cat-date-container">
+            <div class="flex-activity-cat">
+              <p><span class="cat-head">Category:</span> <%= @activity.category %></p>
+              <p class="cat-date"><span class="cat-head">Date:</span> <%= Booking.find(@booking.id).date %></p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="info-card-details-master">

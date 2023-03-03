@@ -416,7 +416,6 @@ figure.snip1157 .author h5 span {
 }
 
 .friend-avatar {
-  width: 25%;
   margin-top: -13rem;
   margin-left: 70%;
   background-color: #e0e0e0;
@@ -570,6 +569,13 @@ figure.snip1157 .author h5 span {
 
   .join-btn {
     font-size: 0.6rem;
+  }
+
+  .friend-avatar {
+    margin-top: -13rem;
+    margin-left: 60%;
+    background-color: #e0e0e0;
+    border-radius: 50%;
   }
 
 }
