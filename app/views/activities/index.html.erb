@@ -5,7 +5,7 @@
   </div>
   <div class="add-btn-flex">
     <%= button_to "+", new_activity_path,
-        :class => "add-btn", :method => :get %>
+        :class => "add-btn", :title => "< Add an Activity!", :method => :get %>
   </div>
   <div class="friends-grid">
   <div>
@@ -29,7 +29,7 @@
               <div class="grid-item">
                 <div class="card-info-banner">
                   <p class="friend-names"><%= User.find(activity.user_id).name %>,</p>
-                  <p class="friend-location"><%= activity.location %>📍</p>           
+                  <p class="friend-location"><%= activity.location %>📍</p>
                   <%= cl_image_tag User.find(activity.user_id).user_photo.key, class: "friend-avatar" %>
                   <p class="friend-price">£<%= activity.price %>0</p>
                 </div>
@@ -43,4 +43,3 @@
   <% else %>
     <%= render 'pages/banner' %>
 <% end %>
-

@@ -1,12 +1,28 @@
-<!-- BANNER START -->
-      <div class="banner-container">
-        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1455734729978-db1ae4f687fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);">
-          <div class="text-banner-container">
-            <h1>Discover the power of <strong>human connection</strong>,</h1>
-            <p>Join our community and start building lifelong friendships today!</p>
-            <%= button_to "Join Now!", new_user_registration_path,
-      :class => "join-btn", :method => :get %>
-          </div>
-        </div>
-      </div>
+<%# <!-- BANNER START -->
+<div class="banner-container">
+  <div class="banner" style="video: url(https://res.cloudinary.com/djr22sgp3/video/upload/v1677786988/friends-33582_qwtmmn.mp4);">
+    <div class="text-banner-container">
+      <h1>Discover the power of <strong>human connection</strong>,</h1>
+      <p>Join our community and start building lifelong friendships today!</p>
+      <%= button_to "Join Now!", new_user_registration_path, :class => "join-btn", :method => :get %>
+    <%# </div>
+  </div>
+</div> %>
 <!-- BANNER END -->
+
+
+<div class="banner-container">
+  <div class="banner">
+    <div class="banner-video">
+      <video autoplay muted loop>
+        <source src="https://res.cloudinary.com/djr22sgp3/video/upload/v1677786988/friends-33582_qwtmmn.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="text-banner-container">
+      <h1>Discover the power of <strong>human connection</strong>,</h1>
+      <p>Join our community and start building lifelong friendships today!</p>
+      <%= button_to "Find Friends →", new_user_registration_path, :class => "join-btn", :method => :get %>
+    </div>
+  </div>
+</div>
