@@ -77,7 +77,7 @@ h1 {
   border-radius: 1rem 0 0 1rem;
 }
 .cat-head {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 .cat-date {
@@ -256,6 +256,14 @@ h1 {
   font-weight: bold !important;
   margin-top: 20px !important;
 }
+
+.booking-info-master {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -15%;
+}
+
 // ----------- Info Card - Avatar, Map and Name ---------------
 .personal-info-grid {
   display: grid;
