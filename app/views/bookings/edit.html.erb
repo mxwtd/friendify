@@ -1,0 +1,10 @@
+<div class="new-friend-container">
+  <div class="new-friend">
+  <h3 class="new-title">Edit you bookings</h3>
+    <%= simple_form_for [@activity, @booking] do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :date, as: :date %>
+      <%= f.submit class: "center-btn more-btn"  %>
+    <% end %>
+  </div>
+</div>
