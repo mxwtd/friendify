@@ -1,6 +1,6 @@
 <h1 class="friend-info-h1"> Booking information:</h1>
 <%# ---------------------------------- %>
-<div class="grid-total-master">
+<div class="booking-info-master">
   <div class="friend-grid-master">
     <div class="grid-container-friend">
       <div class="grid-activity-card">
@@ -17,7 +17,7 @@
           <div class="cat-date-container">
             <div class="flex-activity-cat">
               <p><span class="cat-head">Category:</span> <%= @activity.category %></p>
-              <p class="cat-date"><span class="cat-head">Date:</span> <%= Booking.find(@booking.id).date %></p>
+              <p class="cat-date"><strong>Activity Price:<br></strong>£<%= @activity.price %></p>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@
       </div>
       <div class="item-price">
         <div class="price-details">
-          <p><strong>Activity Price </strong>£<%= @activity.price %></p>
+          <p><span class="cat-head">Date:</span> <%= Booking.find(@booking.id).date %></p>
         </div>
       </div>
       <div class="item-map">
