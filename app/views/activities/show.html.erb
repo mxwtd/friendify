@@ -92,9 +92,6 @@
                   <%= cl_image_tag "https://robohash.org/doloribusaccusamusut.png?size=300x300&set=set1", class: "avatar-booking" %>
                 <% end %>
               </div>
-            <div class="avatar-booking">
-              <%= cl_image_tag current_user.user_photo.key, class: "avatar-booking" %>
-            </div>
           </div>
           <div class="price-box-text">
             <h3>Activity Breakdown</h3>
@@ -107,3 +104,8 @@
     </div>
   </div>
 <% end %>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @marker.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>

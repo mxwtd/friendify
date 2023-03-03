@@ -1,12 +1,7 @@
 class ActivitiesController < ApplicationController
   def index
     @activities = Activity.all
-    @markers = @activities.geocoded.map do |activity|
-      {
-        lat: activity.latitude,
-        lng: activity.longitude
-      }
-    end
+
     if params[:query].present?
       sql_query = <<~SQL
         activities.location ILIKE :query
@@ -23,6 +18,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @user_card = User.find(@activity.user_id)
     @booking = Booking.new
+    @marker = [{ lat: @activity.latitude, lng: @activity.longitude}]
   end
 
   def new
