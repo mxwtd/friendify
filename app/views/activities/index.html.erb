@@ -5,15 +5,27 @@
   </div>
   <div class="add-btn-flex">
     <%= button_to "+", new_activity_path,
-        :class => "add-btn", :method => :get %>
+        :class => "add-btn", :title => "< Add an Activity!", :method => :get %>
   </div>
   <div class="friends-grid">
   <div>
     <h2 class="grid-title">Available Activities</h2>
+      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an activity"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
       <div class="grid-container">
         <% @activities.each do |activity| %>
           <%= link_to activity_path(activity), class:"text-decoration-none" do %>
-            <div class="grid-item">
+          <% if activity.photo.attached? %>
+            <div class="grid-item" style="background-image: url(<%= activity.photo.url %>)">
+          <% else %>
+            <div class="grid-item" style="background-image: url(https://res.cloudinary.com/dbyp3pr3d/image/upload/v1677776253/development/default_activity.png)">
+          <% end %>
               <div class="grid-item">
                 <div class="card-info-banner">
                   <p class="friend-names"><%= User.find(activity.user_id).name %>,</p>
@@ -36,4 +48,3 @@
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  

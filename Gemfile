@@ -87,3 +87,6 @@ gem 'random_users'
 gem "cloudinary"
 
 gem "geocoder"
+
+# MapBox
+gem 'mapbox-gl-rails'
