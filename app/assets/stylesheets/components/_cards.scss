@@ -57,6 +57,12 @@ h1 {
   max-width: 640px;
   margin-left: -23%;
 }
+
+.search-bar {
+  border-radius: 1rem;
+  width: 100%;
+}
+
 .grid-activity-card {
   grid-column: 1 / 2; /* first column */
   grid-row: 1 / 4; /* spans both rows */
@@ -77,7 +83,8 @@ h1 {
   border-radius: 1rem 0 0 1rem;
 }
 .cat-head {
-  font-size: 1.5rem;
+  font-size: 1.5
+  rem;
   font-weight: bold;
 }
 .cat-date {
