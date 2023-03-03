@@ -1,0 +1,29 @@
+<% if user_signed_in? %>
+  <div class="friends-grid">
+  <div>
+    <h2 class="grid-title">Your Bookings</h2>
+      <div class="grid-container">
+        <% @my_bookings.each do |booking| %>
+          <%= link_to booking_path(booking), class:"text-decoration-none" do %>
+          <% if Activity.find(booking.activity_id).photo.attached? %>
+            <div class="grid-item" style="background-image: url(<%= Activity.find(booking.activity_id).photo.url %>)">
+          <% else %>
+            <div class="grid-item" style="background-image: url(https://res.cloudinary.com/dbyp3pr3d/image/upload/v1677776253/development/default_activity.png)">
+          <% end %>
+              <div class="grid-item">
+                <div class="card-info-banner">
+                  <p class="friend-names"><%= User.find(Activity.find(booking.activity_id).user_id).name %>,</p>
+                  <p class="friend-location"><%= Activity.find(booking.activity_id).location %>📍</p>
+                  <%= cl_image_tag User.find(Activity.find(booking.activity_id).user_id).user_photo.key, class: "friend-avatar" %>
+                  <p class="friend-price">£<%= Activity.find(booking.activity_id).price %>0</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% else %>
+    <%= render 'pages/banner' %>
+<% end %>
