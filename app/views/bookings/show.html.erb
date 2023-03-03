@@ -7,7 +7,7 @@
         <% if @activity.photo.attached? %>
           <%= cl_image_tag @activity.photo.key, :crop => "fill", :width => 640, :height => 420 %>
         <% else %>
-          <%= cl_image_tag "default_activity" %>
+          <img src="https://res.cloudinary.com/dbyp3pr3d/image/upload/v1677776253/development/default_activity.png">
         <% end %>
         <div class="activity-cont-master">
           <div class="grid-activity-container">
