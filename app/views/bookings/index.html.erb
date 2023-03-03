@@ -14,7 +14,7 @@
                 <div class="card-info-banner">
                   <p class="friend-names"><%= User.find(Activity.find(booking.activity_id).user_id).name %>,</p>
                   <p class="friend-location"><%= Activity.find(booking.activity_id).location %>📍</p>
-                  <%= cl_image_tag User.find(Activity.find(booking.activity_id).user_id).user_photo.key, class: "friend-avatar" %>
+                  <%= cl_image_tag User.find(Activity.find(booking.activity_id).user_id).user_photo.key, :crop => "fill", :width => 65, :height => 65, class: "friend-avatar" %>
                   <p class="friend-price">£<%= Activity.find(booking.activity_id).price %>0</p>
                 </div>
               </div>
