@@ -6,6 +6,7 @@ class ActivitiesController < ApplicationController
         lat: activity.latitude,
         lng: activity.longitude
       }
+    end
     if params[:query].present?
       sql_query = <<~SQL
         activities.location ILIKE :query
