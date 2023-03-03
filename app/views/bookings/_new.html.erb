@@ -1,5 +1,12 @@
-<%= simple_form_for [@friend, @booking] do |f| %>
-  <%= f.input :comment, placeholder: 'insert text' %>
-  <%= f.input :date, as: :date, placeholder: 'date' %>
-  <%= f.submit :Submit, class: "sub-btn" %>
+<%= simple_form_for [@activity, @booking] do |f| %>
+  <%= f.input :comment, placeholder: 'comment',
+              required: true,
+              autofocus: true,
+              input_html: { autocomplete: "name" }%>
+  <%= f.input :date, as: :date, placeholder: 'date',
+              required: true,
+              autofocus: true,
+              input_html: { autocomplete: "date" }%>
+  <%= button_to "Submit", activity_bookings_path(@activity),
+      :class => "sub-btn", :method => :post %>
 <% end %>
