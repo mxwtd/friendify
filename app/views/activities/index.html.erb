@@ -17,7 +17,7 @@
               <div class="grid-item">
                 <div class="card-info-banner">
                   <p class="friend-names"><%= User.find(activity.user_id).name %>,</p>
-                  <p class="friend-location"><%= activity.location %>📍</p>           
+                  <p class="friend-location"><%= activity.location %>📍</p>
                   <%= cl_image_tag User.find(activity.user_id).user_photo.key, class: "friend-avatar" %>
                   <p class="friend-price">£<%= activity.price %>0</p>
                 </div>
@@ -32,3 +32,8 @@
     <%= render 'pages/banner' %>
 <% end %>
 
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  

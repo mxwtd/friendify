@@ -85,3 +85,5 @@ gem 'random_users'
 
 # Gemfile
 gem "cloudinary"
+
+gem "geocoder"
