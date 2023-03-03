@@ -10,40 +10,42 @@
   <div class="friends-grid">
   <div>
     <h2 class="grid-title">Available Activities</h2>
+    <div class="search-bar-div">
       <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control",
+          class: "form-control search-bar",
           placeholder: "Find an activity"
         %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
-      <div class="grid-container">
-        <% @activities.each do |activity| %>
-          <%= link_to activity_path(activity), class:"text-decoration-none" do %>
-          <% if activity.photo.attached? %>
-            <div class="grid-item" style="background-image: url(<%= activity.photo.url %>)">
-          <% else %>
-            <div class="grid-item" style="background-image: url(https://res.cloudinary.com/dbyp3pr3d/image/upload/v1677776253/development/default_activity.png)">
-          <% end %>
-              <div class="grid-item">
-                <div class="card-info-banner">
-                  <p class="friend-names"><%= User.find(activity.user_id).name %>,</p>
-                  <p class="friend-location"><%= activity.location %>📍</p>
-                  <%= cl_image_tag User.find(activity.user_id).user_photo.key,
-                      class: "friend-avatar",
-                      crop: "fill",
-                      width: 65,
-                      height: 65 %>
-                  <p class="friend-price">£<%= activity.price %>0</p>
-                </div>
+    </div>
+    <div class="grid-container">
+      <% @activities.each do |activity| %>
+        <%= link_to activity_path(activity), class:"text-decoration-none" do %>
+        <% if activity.photo.attached? %>
+          <div class="grid-item" style="background-image: url(<%= activity.photo.url %>)">
+        <% else %>
+          <div class="grid-item" style="background-image: url(https://res.cloudinary.com/dbyp3pr3d/image/upload/v1677776253/development/default_activity.png)">
+        <% end %>
+            <div class="grid-item">
+              <div class="card-info-banner">
+                <p class="friend-names"><%= User.find(activity.user_id).name %>,</p>
+                <p class="friend-location"><%= activity.location %>📍</p>
+                <%= cl_image_tag User.find(activity.user_id).user_photo.key,
+                    class: "friend-avatar",
+                    crop: "fill",
+                    width: 65,
+                    height: 65 %>
+                <p class="friend-price">£<%= activity.price %>0</p>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
-  <% else %>
-    <%= render 'pages/banner' %>
+</div>
+<% else %>
+  <%= render 'pages/banner' %>
 <% end %>
