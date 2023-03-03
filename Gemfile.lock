@@ -147,6 +147,8 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mapbox-gl-rails (2.9.0)
+      railties (>= 3.2)
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
@@ -297,6 +299,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
+  mapbox-gl-rails
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)

@@ -20,6 +20,14 @@
   transition: all 0.2s ease-in-out;
 }
 
+.dropdown-menu {
+  border-radius: 1rem;
+  background-color: rgba(255,255,255,0.8);
+  opacity: 0.9;
+  border: none;
+  margin-top: 1rem;
+}
+
 .nav-link:hover {
   color: #F2474D !important;
   font-weight: 500;

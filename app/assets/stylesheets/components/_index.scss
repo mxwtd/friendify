@@ -42,15 +42,47 @@ body {
   justify-content: center;
 }
 
+// .banner {
+//   margin-top: 6%;
+//   background-size: cover;
+//   background-position: center;
+//   padding: 150px 0;
+//   width: 90%;
+//   max-width: 90%;
+//   border-radius: 2rem;
+// }
+
 .banner {
-  margin-top: 6%;
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  width: 90%;
-  max-width: 90%;
+  position: relative;
+}
+
+.banner-video {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10%;
+  position: relative;
+}
+
+.banner-video video {
+  margin-top: 5%;
+  width: 70%;
   border-radius: 2rem;
 }
+
+// .text-banner-container {
+//   margin-left: 5%;
+//   height: 15rem;
+// }
+
+.text-banner-container {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: #fff;
+}
+
 .banner h1 {
   margin: 0;
   color: white;
@@ -97,10 +129,6 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
-.text-banner-container {
-  margin-left: 5%;
-  height: 15rem;
-}
 
 .user-homepage {
   margin-top: 5%;
@@ -116,6 +144,105 @@ body {
 }
 
 // --------------------- Home Page ---------------------
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+
+.testimonal {
+  margin-top: -2%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+figure.snip1157 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  color: #333;
+  text-align: left;
+  box-shadow: none !important;
+}
+figure.snip1157 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+  transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+figure.snip1157 img {
+  max-width: 100%;
+  vertical-align: middle;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  margin: 40px 0 0 10px;
+}
+figure.snip1157 blockquote {
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  background-color: #fafafa;
+  padding: 25px 50px 30px 50px;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6em;
+  font-style: italic;
+}
+figure.snip1157 blockquote:before,
+figure.snip1157 blockquote:after {
+  font-family: 'FontAwesome';
+  content: "\201C";
+  position: absolute;
+  font-size: 50px;
+  opacity: 0.3;
+  font-style: normal;
+}
+figure.snip1157 blockquote:before {
+  top: 25px;
+  left: 20px;
+}
+figure.snip1157 blockquote:after {
+  content: "\201D";
+  right: 20px;
+  bottom: 0;
+}
+figure.snip1157 .arrow {
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #fafafa;
+  margin: 0;
+  position: absolute;
+}
+figure.snip1157 .author {
+  position: absolute;
+  bottom: 45px;
+  padding: 0 10px 0 120px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+}
+figure.snip1157 .author h5 {
+  opacity: 0.8;
+  margin: 0;
+  font-weight: 800;
+}
+figure.snip1157 .author h5 span {
+  font-weight: 400;
+  text-transform: none;
+  padding-left: 5px;
+}
+
 
 // ---------------------- EDIT PROFILE PAGE -----------------------
 
@@ -175,12 +302,28 @@ body {
   padding: 0;
 }
 
+.add-btn:hover::before {
+  content: attr(title);
+  position: absolute;
+  top: 15%;
+  left: 260%;
+  transform: translateX(-50%);
+  padding: 0.5em;
+  background-color: #EA443A;
+  color: #fff;
+  font-size: 0.5em;
+  border-radius: 1rem;
+  white-space: nowrap;
+  z-index: 1;
+  transition: all 0.6s ease-in-out;
+}
+
 .add-btn:hover {
   cursor: pointer;
   background-color: #c6352d;
   color: #ffffff;
   scale: 1.1;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .grid-container {
@@ -200,7 +343,7 @@ body {
 }
 
 .grid-item {
-  background-image: url("https://res.cloudinary.com/djr22sgp3/image/upload/v1677596838/lachlan-dempsey-6VPEOdpFNAs-unsplash_p6fxn1.jpg");
+  // background-image: url("https://res.cloudinary.com/djr22sgp3/image/upload/v1677596838/lachlan-dempsey-6VPEOdpFNAs-unsplash_p6fxn1.jpg");
   background-size: cover;
   background-position: center;
   height: 15rem;
@@ -398,6 +541,50 @@ body {
     width: 2.2rem;
     height: 2.2rem;
   }
+
+  .text-banner-container {
+    margin-top: 3%;
+  }
+
+  .text-banner-container h1 {
+    font-size: 1.3rem;
+  }
+
+  .text-banner-container p {
+    font-size: 0.9rem;
+  }
+
+  .join-btn {
+    font-size: 0.6rem;
+  }
+
+}
+
+@media only screen and (max-width: 850px) {
+
+  video {
+    object-fit: cover;
+    height: 28rem;
+    width: auto;
+    margin-bottom: 7%;
+  }
+
+  .text-banner-container {
+    margin-top: 3%;
+  }
+
+  .text-banner-container h1 {
+    font-size: 1.3rem;
+  }
+
+  .text-banner-container p {
+    font-size: 0.9rem;
+  }
+
+  .join-btn {
+    font-size: 0.6rem;
+    margin-top: -2rem;
+  }
 }
 
 @media only screen and (max-width: 1300px) and (min-width: 900px) {
@@ -408,6 +595,19 @@ body {
     border-radius: 20px;
     overflow: hidden;
     padding: 1rem;
+  }
+
+  .text-banner-container {
+    margin-top: 3%;
+    margin-left: -1rem;
+  }
+
+  .text-banner-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .text-banner-container p {
+    font-size: 0.8rem;
   }
 }
 
