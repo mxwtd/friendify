@@ -39,14 +39,14 @@ class BookingsController < ApplicationController
 
   def update
     booking = Booking.find(params[:id])
-    booking.update(activities_params)
+    booking.update(booking_params)
 
     redirect_to bookings_path
   end
 
   def destroy
-    activity = Booking.find(params[:id])
-    activity.destroy
+    booking = Booking.find(params[:id])
+    booking.destroy
 
     redirect_to bookings_path, status: :see_other
   end

@@ -5,8 +5,10 @@ class ActivitiesController < ApplicationController
         activities.location ILIKE :query
         OR activities.description ILIKE :query
         OR activities.category ILIKE :query
+        OR users.name ILIKE :query
       SQL
       @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
+      @activities = Activity.joins(:user).where(sql_query, query: "%#{params[:query]}%")
     else
       @activities = Activity.all
     end

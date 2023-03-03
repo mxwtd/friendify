@@ -49,21 +49,12 @@
               <div class="btn-pluss-master">
                 <nav class="btn-pluss-wrapper">
                 <h2 class="tooltip">Look!</h2>
-                <% if current_user.id == @activity.user_id %>
-                  <div href="#" class="btn-pluss">
+                <div href="#" class="btn-pluss">
                     <ul>
-                      <li><%= link_to "Delete", activity_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
-                      <li><%= link_to "Edit", edit_activity_path%></li>
+                      <li><%= link_to "Edit", edit_booking_path %></li>
+                      <li><%= link_to "Delete", booking_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
                     </ul>
                   </div>
-                <% else %>
-                  <div href="#" class="btn-pluss">
-                    <ul>
-                      <li><%= link_to "Book", "#"%></li>
-                      <li><%= link_to "UnFriend", activity_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
-                    </ul>
-                  </div>
-                <% end %>
                 </nav>
               </div>
             </div>

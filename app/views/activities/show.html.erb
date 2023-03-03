@@ -48,13 +48,6 @@
                       <li><%= link_to "Edit", edit_activity_path%></li>
                     </ul>
                   </div>
-                <% else %>
-                  <div href="#" class="btn-pluss">
-                    <ul>
-                      <li><%= link_to "Book", "#"%></li>
-                      <li><%= link_to "UnFriend", activity_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
-                    </ul>
-                  </div>
                 <% end %>
                 </nav>
               </div>
