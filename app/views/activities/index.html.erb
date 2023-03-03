@@ -22,7 +22,7 @@
         <% @activities.each do |activity| %>
           <%= link_to activity_path(activity), class:"text-decoration-none" do %>
           <% if activity.photo.attached? %>
-            <div class="grid-item" style="background-image: url(<% activity.photo.url %>)">
+            <div class="grid-item" style="background-image: url(<%= activity.photo.url %>)">
           <% else %>
             <div class="grid-item" style="background-image: url(https://res.cloudinary.com/dbyp3pr3d/image/upload/v1677776253/development/default_activity.png)">
           <% end %>

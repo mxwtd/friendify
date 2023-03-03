@@ -4,6 +4,7 @@ class ActivitiesController < ApplicationController
       sql_query = <<~SQL
         activities.location ILIKE :query
         OR activities.description ILIKE :query
+        OR activities.category ILIKE :query
       SQL
       @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
     else
