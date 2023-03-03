@@ -2,7 +2,7 @@
   background-size: cover;
   border-radius: 25px;
   background-position: center;
-  height: 14.5rem;
+  height: 18.5rem;
   width: 100%;
   align-items: center;
   color: white;
@@ -61,12 +61,36 @@ h1 {
   grid-column: 1 / 2; /* first column */
   grid-row: 1 / 4; /* spans both rows */
 }
-
+.activity-cont-master {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(242, 242, 242);
+  border-radius: 0 0 2rem 2rem;
+}
+.flex-activity-cat {
+  text-align: left;
+  padding-left: 1rem;
+  margin-left: -30%;
+  background-color: #AC2323;
+  color: #E4E4E4;
+  border-radius: 1rem 0 0 1rem;
+}
+.cat-head {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.cat-date {
+  margin-top: -1rem;
+}
+.flex-activity-cat p {
+  font-size: 0.85rem;
+}
 .grid-activity-card img {
   width: 40rem;
   object-fit: cover;
   border-radius: 2rem 2rem 0 0;
-  background-color: #dcdcdc;
+  background-color: #DCDCDC;
 }
 .grid-activity-container {
   background-color: rgb(242, 242, 242);
@@ -118,10 +142,10 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  width: 55.5rem;
+  width: 54.5rem;
   gap: 10px;
   margin-top: 2%;
-  margin-left: -7%;
+  margin-left: -3%;
   background-color: #F2F2F2;
   border-radius: 2rem;
   padding: 1rem;
@@ -159,25 +183,21 @@ h1 {
   scale: 1.1;
   transition: all 0.2s ease-in-out;
 }
-
 .booking-window {
-  background-color: #dcdcdc;
+  background-color: #DCDCDC;
   border-radius: 1rem;
   height: 80%;
   padding: 0 1rem;
 }
-
 #booking_comment {
   border-radius: 1rem;
   opacity: 0.7;
   height: 3rem;
 }
-
 .form-label {
   padding-top: 1.5rem;
   margin-top: -1rem;
 }
-
 .sub-btn {
   background-color: #EA443A;
   color: white;
@@ -193,12 +213,10 @@ h1 {
   background-color: #C62E33 !important;
   color: white !important;
 }
-
 .d-flex {
   border-radius: 1rem;
   opacity: 0.7;
 }
-
 .avatars-booking {
   display: flex;
   flex-direction: row;
@@ -271,8 +289,6 @@ h1 {
 }
 .avatar-img {
   margin-top: 0.4rem;
-  min-width: 4rem;
-  max-width: 4rem;
   border-radius: 50%;
   background-color: #E4E4E4;
   border: 1px solid #2A2A2A;
@@ -281,11 +297,9 @@ h1 {
 section{
   position: relative;
 }
-
 .btn-pluss-master {
   margin-top: 27%;
 }
-
 .btn-pluss{
   overflow: hidden;
   position: relative;
@@ -451,7 +465,6 @@ section{
   .grid-total-master {
     margin-right: -10%;
   }
-
   .grid-container-friend {
     display: grid;
     grid-template-columns: 1fr;
@@ -475,7 +488,6 @@ section{
     // max-width: 22.5rem;
     max-height: 5rem !important;
   }
-
   .item-price {
     grid-column: 1;
     grid-row: 3 / 4;

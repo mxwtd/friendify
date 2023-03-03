@@ -1,7 +1,30 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    # if params[:query].present?
+    #   sql_query = <<~SQL
+    #     activities.location ILIKE :query
+    #     OR activities.description ILIKE :query
+    #     OR activities.category ILIKE :query
+    #   SQL
+    #   @bookings = Activity.where(sql_query, query: "%#{params[:query]}%")
+    # else
+    #   @bookings = Booking.all
+    # end
+    # @bookings = Booking.where()
+    # @activities_booking = B
+    # bookings = Booking.all
+    @my_bookings = Booking.where(user_id: current_user.id)
+    # my_activities = Activity.where(user_id: current_user.id)
+    # activity_booked = Booking.where()
+    # @activities_booked = Booking.where.not(user_id: current_user.id)
+    # @activities_id = my_activities.select do |activity|
+    #   Booking.where(activity_id: activity.id)
+    # end
+
+    # @activities_booked = bookings.select do |book|
+    #   book.activity_id == activities_id
+    # end
   end
 
   def show

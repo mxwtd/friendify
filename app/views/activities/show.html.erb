@@ -25,9 +25,9 @@
             </div>
             <div class="item-avatar">
               <% if @user_card.user_photo.attached? %>
-                <%= cl_image_tag @user_card.user_photo.key, class: "avatar-img" %>
+                <%= cl_image_tag @user_card.user_photo.key, :crop => "fill", :width => 70, :height => 70, class: "avatar-img" %>
               <% else %>
-                <%= cl_image_tag "default_friend_profile", class: "avatar-img" %>
+                <%= cl_image_tag "default_friend_profile", :crop => "fill", :width => 70, :height => 70, class: "avatar-img" %>
               <% end %>
             </div>
             <div class="item-menu">
@@ -87,13 +87,13 @@
           <div class="avatars-booking">
             <div class="avatar-booking">
                 <% if @user_card.user_photo.attached? %>
-                  <%= cl_image_tag @user_card.user_photo.key, class: "avatar-booking" %>
+                  <%= cl_image_tag @user_card.user_photo.key, :crop => "fill", :width => 80, :height => 80, class: "avatar-booking" %>
                 <% else %>
-                  <%= cl_image_tag "https://robohash.org/doloribusaccusamusut.png?size=300x300&set=set1", class: "avatar-booking" %>
+                  <%= cl_image_tag "https://robohash.org/doloribusaccusamusut.png?size=300x300&set=set1", :crop => "fill", :width => 80, :height => 80, class: "avatar-booking" %>
                 <% end %>
               </div>
             <div class="avatar-booking">
-              <%= cl_image_tag current_user.user_photo.key, class: "avatar-booking" %>
+              <%= cl_image_tag current_user.user_photo.key, :crop => "fill", :width => 80, :height => 80, class: "avatar-booking" %>
             </div>
           </div>
           <div class="price-box-text">
