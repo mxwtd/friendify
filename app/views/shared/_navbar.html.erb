@@ -44,7 +44,7 @@
 <% end %>
 
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
+                <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
                 <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
               </div>
