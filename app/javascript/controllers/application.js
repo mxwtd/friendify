@@ -1,5 +1,5 @@
 import { Application } from "@hotwired/stimulus"
-import GoogleMapsController from "./controllers/google_maps_controller";
+// import GoogleMapsController from "./controllers/map_controller";
 
 const application = Application.start()
 
@@ -7,10 +7,10 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
-const context = require.context("./controllers", true, /\.js$/);
-application.load(definitionsFromContext(context));
-application.register("google-maps", GoogleMapsController);
+// const context = require.context("./controllers", true, /\.js$/);
+// application.load(definitionsFromContext(context));
+// application.register("map", GoogleMapsController);
 
-console.log("Change this!");
+// console.log("Change thisss!");
 
 export { application }
