@@ -52,6 +52,15 @@ categories = [
   "Sing"
 ]
 
+puts "create locations"
+locations = [
+  "Medellin",
+  "London",
+  "Barcelona, Spain",
+  "Kolding, Denmark",
+  "East Leda"
+]
+
 puts "create activities data"
 
 5.times do |i|
@@ -59,7 +68,7 @@ puts "create activities data"
   photo = URI.open(Faker::Avatar.image)
   activity = Activity.new(
     description: Faker::Lorem.paragraph, 
-    location: Faker::Address.city, 
+    location: locations.sample, 
     price: Faker::Number.decimal_part(digits: 2),
     category: categories.sample
   )
