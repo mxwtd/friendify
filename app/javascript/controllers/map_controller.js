@@ -4,7 +4,7 @@ import { Loader } from "@googlemaps/js-api-loader";
 
 // Connects to data-controller="map"
 export default class extends Controller {
-  static values = { api: String }
+  static values = { api: String, markers: Array }
   
   static targets = ["map"]
 
@@ -31,9 +31,11 @@ export default class extends Controller {
       center: {lat: 42.402900, lng: -122.885240}
     });
 
-    const marker = new google.maps.Marker({
-      position: {lat: 42.402900, lng: -122.885240},
-      map: map,
+    this.markersValue.map(m => {
+      const marker = new google.maps.Marker({
+        position: m,
+        map: map,
+      });
     });
   }
 }
