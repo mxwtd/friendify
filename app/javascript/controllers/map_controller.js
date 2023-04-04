@@ -28,7 +28,8 @@ export default class extends Controller {
     console.log("init Map function is working");
     var map = new google.maps.Map(this.mapTarget, {
       zoom: 5,
-      center: {lat: 42.402900, lng: -122.885240}
+      // Put the current User Location
+      center: this.markersValue[0]
     });
 
     this.markersValue.map(m => {

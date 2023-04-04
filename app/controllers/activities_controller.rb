@@ -13,6 +13,8 @@ class ActivitiesController < ApplicationController
       @activities = Activity.all
     end
 
+    @google_api = ENV['GOOGLE_MAPS_API']
+
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
