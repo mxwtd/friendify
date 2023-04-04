@@ -21,7 +21,10 @@
       <% end %>
     </div>
 
-    <div data-controller="map">
+    <div data-controller="map" 
+          data-map-api-value="<%= ENV['GOOGLE_MAPS_API']%>"
+          data-map-markers-value="<%= @markers.to_json %>"
+          >
       <div class="grid-container">
         <% @activities.each do |activity| %>
           <%= link_to activity_path(activity), class:"text-decoration-none" do %>
@@ -48,10 +51,7 @@
       </div>
 
       <h2>My google maps demo</h2>
-      <%# <div id="map" data-listing-map-target="map"> %>
-
-      <div data-map-target="map" id="map" data-map-api-key-value="<%= ENV['GOOGLE_MAPS_API'] %>">
-        <p><%= ENV['GOOGLE_MAPS_API'] %></p>
+      <div id="map" data-map-target="map">
       </div>
     </div>
 
