@@ -20,31 +20,41 @@
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
-    <div class="grid-container">
-      <% @activities.each do |activity| %>
-        <%= link_to activity_path(activity), class:"text-decoration-none" do %>
-        <% if activity.photo.attached? %>
-          <div class="grid-item" style="background-image: url(<%= activity.photo.url %>)">
-        <% else %>
-          <div class="grid-item" style="background-image: url(https://res.cloudinary.com/dbyp3pr3d/image/upload/v1677776253/development/default_activity.png)">
-        <% end %>
-            <div class="grid-item">
-              <div class="card-info-banner">
-                <p class="friend-names"><%= User.find(activity.user_id).name %>,</p>
-                <p class="friend-location"><%= activity.location %>📍</p>
-                <%= cl_image_tag User.find(activity.user_id).user_photo.key,
-                    class: "friend-avatar",
-                    crop: "fill",
-                    width: 65,
-                    height: 65 %>
-                <p class="friend-price">£<%= activity.price %>0</p>
+
+    <div data-controller="map" 
+          data-map-api-value="<%= @google_api %>"
+          data-map-markers-value="<%= @markers.to_json %>"
+          >
+      <div class="grid-container">
+        <% @activities.each do |activity| %>
+          <%= link_to activity_path(activity), class:"text-decoration-none" do %>
+          <% if activity.photo.attached? %>
+            <div class="grid-item" style="background-image: url(<%= activity.photo.url %>)">
+          <% else %>
+            <div class="grid-item" style="background-image: url(https://res.cloudinary.com/dbyp3pr3d/image/upload/v1677776253/development/default_activity.png)">
+          <% end %>
+              <div class="grid-item">
+                <div class="card-info-banner">
+                  <p class="friend-names"><%= User.find(activity.user_id).name %>,</p>
+                  <p class="friend-location"><%= activity.location %>📍</p>
+                  <%= cl_image_tag User.find(activity.user_id).user_photo.key,
+                      class: "friend-avatar",
+                      crop: "fill",
+                      width: 65,
+                      height: 65 %>
+                  <p class="friend-price">£<%= activity.price %>0</p>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+
+      <h2>My google maps demo</h2>
+      <div id="map" data-map-target="map">
+      </div>
     </div>
-  </div>
+
 </div>
 <% else %>
   <%= render 'pages/banner' %>

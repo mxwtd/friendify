@@ -1,5 +1,5 @@
 require_relative "boot"
-
+require 'dotenv/load'
 require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
@@ -15,6 +15,9 @@ module Friendify
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+
+    # Load environment variables from the .env file
+    Dotenv::Railtie.load
 
     # Configuration for the application, engines, and railties goes here.
   
