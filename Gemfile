@@ -91,3 +91,5 @@ gem 'mapbox-gl-rails'
 
 # Geocoder
 gem "geocoder"
+
+gem 'dotenv'
