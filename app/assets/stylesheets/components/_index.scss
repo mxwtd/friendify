@@ -329,12 +329,15 @@ figure.snip1157 .author h5 span {
 }
 
 .grid-container {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
   border-radius: 20px;
   overflow: hidden;
   padding: 1rem;
+  background-color: green;
+  flex-basis: 60%;
 }
 
 .grid-title {
@@ -527,6 +530,7 @@ figure.snip1157 .author h5 span {
     border-radius: 20px;
     overflow: hidden;
     padding: 1rem;
+    background-color: purple;
   }
 
   .grid-item {
@@ -617,6 +621,7 @@ figure.snip1157 .author h5 span {
     border-radius: 20px;
     overflow: hidden;
     padding: 1rem;
+    background-color: blue;
   }
 
   .text-banner-container {
@@ -641,14 +646,24 @@ figure.snip1157 .author h5 span {
     border-radius: 20px;
     overflow: hidden;
     padding: 1rem;
+    background-color: red;
   }
 }
 
 // -------------------- Map design -----------------------
 #map {
   // background-color: gray;
-  width: 100%;
+  width: 80%;
   height: 300px;
-  border-radius: 5%;
+  flex-basis: 40%;
+  // border-radius: 5%;
 }
+
+
+.display-activities {
+  // background-color: red;
+  // display: flex;
+}
+
+
 

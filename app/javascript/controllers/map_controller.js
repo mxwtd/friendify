@@ -11,7 +11,6 @@ export default class extends Controller {
   connect() {
     console.log("Listing Map connected");
     console.log(this.mapTarget);
-    console.log(this.apiValue);
     
     const loader = new Loader({
       apiKey: this.apiValue,
@@ -29,7 +28,8 @@ export default class extends Controller {
     var map = new google.maps.Map(this.mapTarget, {
       zoom: 5,
       // Put the current User Location
-      center: this.markersValue[0]
+      center: this.markersValue[0],
+      mapId: "380e59bf862d485a"
     });
 
     this.markersValue.map(m => {

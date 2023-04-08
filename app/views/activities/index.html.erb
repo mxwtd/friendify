@@ -3,11 +3,14 @@
     <%= button_to "< Back", root_path,
         :class => "back-btn", :method => :get %>
   </div>
+
   <div class="add-btn-flex">
     <%= button_to "+", new_activity_path,
         :class => "add-btn", :title => "< Add an Activity!", :method => :get %>
   </div>
+
   <div class="friends-grid">
+  
   <div>
     <h2 class="grid-title">Available Activities</h2>
     <div class="search-bar-div">
@@ -21,7 +24,8 @@
       <% end %>
     </div>
 
-    <div data-controller="map" 
+    <div class="display-activities"
+          data-controller="map" 
           data-map-api-value="<%= @google_api %>"
           data-map-markers-value="<%= @markers.to_json %>"
           >
@@ -50,7 +54,6 @@
         <% end %>
       </div>
 
-      <h2>My google maps demo</h2>
       <div id="map" data-map-target="map">
       </div>
     </div>
